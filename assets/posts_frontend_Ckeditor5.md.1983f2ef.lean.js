@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>「CKEditor5」富文本编辑器定制 | logyxiao</title>
-    <meta name="description" content="vitepress,blog,blog-theme">
-    <link rel="stylesheet" href="/assets/style.1cb11de1.css">
-    <link rel="modulepreload" href="/assets/Home.573d22dc.js">
-    <link rel="modulepreload" href="/assets/app.cf061c27.js">
-    <link rel="modulepreload" href="/assets/posts_frontend_Ckeditor5.md.1983f2ef.lean.js">
-    <link rel="modulepreload" href="/assets/app.cf061c27.js">
-    <meta name="twitter:title" content="「CKEditor5」富文本编辑器定制 | logyxiao">
-    <meta property="og:title" content="「CKEditor5」富文本编辑器定制 | logyxiao">
-  </head>
-  <body>
-    <div id="app"><!--[--><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="logyxiao, back to home" data-v-675d8756 data-v-4a583abe><!----> logyxiao</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/archives" data-v-b8818f8c>文章 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/tags" data-v-b8818f8c>标签 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/about" data-v-b8818f8c>关于 <!----></a></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/archives" data-v-b8818f8c>文章 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/tags" data-v-b8818f8c>标签 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/pages/about" data-v-b8818f8c>关于 <!----></a></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="#为什么使用ckeditor5">为什么使用CKEditor5</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#安装使用">安装使用</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#_1-创建自己的-ckeditor">1.创建自己的 CKEditor</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#功能插件">功能插件</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#上传适配器">上传适配器</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#自定义上传适配器">自定义上传适配器</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#添加自定义插件">添加自定义插件</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><!-- TODO: make this button accessible --><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h2 id="为什么使用ckeditor5" tabindex="-1">为什么使用<a href="https://ckeditor.com/ckeditor-5/" target="_blank" rel="noopener noreferrer">CKEditor5</a> <a class="header-anchor" href="#为什么使用ckeditor5" aria-hidden="true">#</a></h2><ul><li><strong>方便集成</strong>:可以与 Angular，React 和 Vue.js 集成,也可以和 Electron 和移动设备（Android，iOS）兼容。</li><li><strong>可定制化</strong>:可以自定义自己所需的编辑功能,如自动格式化,上传适配器,导出 PDF 等功能</li></ul><h2 id="安装使用" tabindex="-1">安装使用 <a class="header-anchor" href="#安装使用" aria-hidden="true">#</a></h2><h3 id="_1-创建自己的-ckeditor" tabindex="-1">1.创建自己的 CKEditor <a class="header-anchor" href="#_1-创建自己的-ckeditor" aria-hidden="true">#</a></h3><p>有关更多详细信息，请查看此<a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html" target="_blank" rel="noopener noreferrer">官方教程</a>。也可以使用<a href="https://ckeditor.com/ckeditor-5/online-builder/" target="_blank" rel="noopener noreferrer">官方在线定制</a>选择自己需要的功能组件。</p><div class="language-bash"><pre><code><span class="token function">git</span> clone -b stable https://github.com/ckeditor/ckeditor5-build-classic.git
+import{_ as n,c as s,o as a,f as t}from"./app.cf061c27.js";const m='{"title":"\u300CCKEditor5\u300D\u5BCC\u6587\u672C\u7F16\u8F91\u5668\u5B9A\u5236","description":"","frontmatter":{"date":"2020-12-04T00:00:00.000Z","title":"\u300CCKEditor5\u300D\u5BCC\u6587\u672C\u7F16\u8F91\u5668\u5B9A\u5236","tags":["\u524D\u7AEF"],"describe":"CKEditor5\u53EF\u4EE5\u4E0E Angular\uFF0CReact \u548C Vue.js \u96C6\u6210,\u4E5F\u53EF\u4EE5\u548C Electron \u548C\u79FB\u52A8\u8BBE\u5907\uFF08Android\uFF0CiOS\uFF09\u517C\u5BB9\u3002\u81EA\u5B9A\u4E49\u81EA\u5DF1\u6240\u9700\u7684\u7F16\u8F91\u529F\u80FD,\u5982\u81EA\u52A8\u683C\u5F0F\u5316,\u4E0A\u4F20\u9002\u914D\u5668,\u5BFC\u51FA PDF \u7B49\u529F\u80FD"},"headers":[{"level":2,"title":"\u4E3A\u4EC0\u4E48\u4F7F\u7528CKEditor5","slug":"\u4E3A\u4EC0\u4E48\u4F7F\u7528ckeditor5"},{"level":2,"title":"\u5B89\u88C5\u4F7F\u7528","slug":"\u5B89\u88C5\u4F7F\u7528"},{"level":3,"title":"1.\u521B\u5EFA\u81EA\u5DF1\u7684 CKEditor","slug":"_1-\u521B\u5EFA\u81EA\u5DF1\u7684-ckeditor"},{"level":2,"title":"\u529F\u80FD\u63D2\u4EF6","slug":"\u529F\u80FD\u63D2\u4EF6"},{"level":2,"title":"\u4E0A\u4F20\u9002\u914D\u5668","slug":"\u4E0A\u4F20\u9002\u914D\u5668"},{"level":3,"title":"\u81EA\u5B9A\u4E49\u4E0A\u4F20\u9002\u914D\u5668","slug":"\u81EA\u5B9A\u4E49\u4E0A\u4F20\u9002\u914D\u5668"},{"level":3,"title":"\u6DFB\u52A0\u81EA\u5B9A\u4E49\u63D2\u4EF6","slug":"\u6DFB\u52A0\u81EA\u5B9A\u4E49\u63D2\u4EF6"}],"relativePath":"posts/frontend/Ckeditor5.md","lastUpdated":1607667446000}',p={},o=t(`__VP_STATIC_START__<h2 id="\u4E3A\u4EC0\u4E48\u4F7F\u7528ckeditor5" tabindex="-1">\u4E3A\u4EC0\u4E48\u4F7F\u7528<a href="https://ckeditor.com/ckeditor-5/" target="_blank" rel="noopener noreferrer">CKEditor5</a> <a class="header-anchor" href="#\u4E3A\u4EC0\u4E48\u4F7F\u7528ckeditor5" aria-hidden="true">#</a></h2><ul><li><strong>\u65B9\u4FBF\u96C6\u6210</strong>:\u53EF\u4EE5\u4E0E Angular\uFF0CReact \u548C Vue.js \u96C6\u6210,\u4E5F\u53EF\u4EE5\u548C Electron \u548C\u79FB\u52A8\u8BBE\u5907\uFF08Android\uFF0CiOS\uFF09\u517C\u5BB9\u3002</li><li><strong>\u53EF\u5B9A\u5236\u5316</strong>:\u53EF\u4EE5\u81EA\u5B9A\u4E49\u81EA\u5DF1\u6240\u9700\u7684\u7F16\u8F91\u529F\u80FD,\u5982\u81EA\u52A8\u683C\u5F0F\u5316,\u4E0A\u4F20\u9002\u914D\u5668,\u5BFC\u51FA PDF \u7B49\u529F\u80FD</li></ul><h2 id="\u5B89\u88C5\u4F7F\u7528" tabindex="-1">\u5B89\u88C5\u4F7F\u7528 <a class="header-anchor" href="#\u5B89\u88C5\u4F7F\u7528" aria-hidden="true">#</a></h2><h3 id="_1-\u521B\u5EFA\u81EA\u5DF1\u7684-ckeditor" tabindex="-1">1.\u521B\u5EFA\u81EA\u5DF1\u7684 CKEditor <a class="header-anchor" href="#_1-\u521B\u5EFA\u81EA\u5DF1\u7684-ckeditor" aria-hidden="true">#</a></h3><p>\u6709\u5173\u66F4\u591A\u8BE6\u7EC6\u4FE1\u606F\uFF0C\u8BF7\u67E5\u770B\u6B64<a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html" target="_blank" rel="noopener noreferrer">\u5B98\u65B9\u6559\u7A0B</a>\u3002\u4E5F\u53EF\u4EE5\u4F7F\u7528<a href="https://ckeditor.com/ckeditor-5/online-builder/" target="_blank" rel="noopener noreferrer">\u5B98\u65B9\u5728\u7EBF\u5B9A\u5236</a>\u9009\u62E9\u81EA\u5DF1\u9700\u8981\u7684\u529F\u80FD\u7EC4\u4EF6\u3002</p><div class="language-bash"><pre><code><span class="token function">git</span> clone -b stable https://github.com/ckeditor/ckeditor5-build-classic.git
 <span class="token builtin class-name">cd</span> ckeditor5-build-classic
-<span class="token comment"># 下载依赖</span>
+<span class="token comment"># \u4E0B\u8F7D\u4F9D\u8D56</span>
 <span class="token function">yarn</span>
-<span class="token comment"># 构建</span>
+<span class="token comment"># \u6784\u5EFA</span>
 <span class="token function">yarn</span> build
-</code></pre></div><p>构建完成后，您将在<code>build</code>文件夹中获得一个自定义 CKEditor 。</p><p>打开<code>sample/index.html</code>查看效果</p><h2 id="功能插件" tabindex="-1">功能插件 <a class="header-anchor" href="#功能插件" aria-hidden="true">#</a></h2><ol><li>找到自己所需的功能插件,可以在<a href="https://www.npmjs.com/search?q=ckeditor" target="_blank" rel="noopener noreferrer">npm</a>上搜索.</li><li>例如文本对齐插件 <code>yarn add @ckeditor/ckeditor5-alignment</code></li><li>编辑<code>src/ckeditor.js</code>文件以将插件添加到将包含在构建中的插件列表中</li></ol><div class="language-js"><pre><code><span class="token comment">// The editor creator to use.</span>
+</code></pre></div><p>\u6784\u5EFA\u5B8C\u6210\u540E\uFF0C\u60A8\u5C06\u5728<code>build</code>\u6587\u4EF6\u5939\u4E2D\u83B7\u5F97\u4E00\u4E2A\u81EA\u5B9A\u4E49 CKEditor \u3002</p><p>\u6253\u5F00<code>sample/index.html</code>\u67E5\u770B\u6548\u679C</p><h2 id="\u529F\u80FD\u63D2\u4EF6" tabindex="-1">\u529F\u80FD\u63D2\u4EF6 <a class="header-anchor" href="#\u529F\u80FD\u63D2\u4EF6" aria-hidden="true">#</a></h2><ol><li>\u627E\u5230\u81EA\u5DF1\u6240\u9700\u7684\u529F\u80FD\u63D2\u4EF6,\u53EF\u4EE5\u5728<a href="https://www.npmjs.com/search?q=ckeditor" target="_blank" rel="noopener noreferrer">npm</a>\u4E0A\u641C\u7D22.</li><li>\u4F8B\u5982\u6587\u672C\u5BF9\u9F50\u63D2\u4EF6 <code>yarn add @ckeditor/ckeditor5-alignment</code></li><li>\u7F16\u8F91<code>src/ckeditor.js</code>\u6587\u4EF6\u4EE5\u5C06\u63D2\u4EF6\u6DFB\u52A0\u5230\u5C06\u5305\u542B\u5728\u6784\u5EFA\u4E2D\u7684\u63D2\u4EF6\u5217\u8868\u4E2D</li></ol><div class="language-js"><pre><code><span class="token comment">// The editor creator to use.</span>
 <span class="token keyword">import</span> ClassicEditorBase <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-editor-classic/src/classiceditor&quot;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> Essentials <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-essentials/src/essentials&quot;</span><span class="token punctuation">;</span>
@@ -40,11 +24,11 @@
 <span class="token keyword">import</span> List <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-list/src/list&quot;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Paragraph <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-paragraph/src/paragraph&quot;</span><span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> Alignment <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-alignment/src/alignment&quot;</span><span class="token punctuation">;</span> <span class="token comment">// &lt;--- 添加在此处</span>
+<span class="token keyword">import</span> Alignment <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-alignment/src/alignment&quot;</span><span class="token punctuation">;</span> <span class="token comment">// &lt;--- \u6DFB\u52A0\u5728\u6B64\u5904</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">ClassicEditor</span> <span class="token keyword">extends</span> <span class="token class-name">ClassicEditorBase</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-<span class="token comment">// 引入所需插件.</span>
+<span class="token comment">// \u5F15\u5165\u6240\u9700\u63D2\u4EF6.</span>
 ClassicEditor<span class="token punctuation">.</span>builtinPlugins <span class="token operator">=</span> <span class="token punctuation">[</span>
   Essentials<span class="token punctuation">,</span>
   UploadAdapter<span class="token punctuation">,</span>
@@ -62,16 +46,16 @@ ClassicEditor<span class="token punctuation">.</span>builtinPlugins <span class=
   Link<span class="token punctuation">,</span>
   List<span class="token punctuation">,</span>
   Paragraph<span class="token punctuation">,</span>
-  Alignment<span class="token punctuation">,</span> <span class="token comment">// &lt;--- 添加在此处</span>
+  Alignment<span class="token punctuation">,</span> <span class="token comment">// &lt;--- \u6DFB\u52A0\u5728\u6B64\u5904</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-<span class="token comment">// 编辑器配置.</span>
+<span class="token comment">// \u7F16\u8F91\u5668\u914D\u7F6E.</span>
 ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
   toolbar<span class="token operator">:</span> <span class="token punctuation">{</span>
     items<span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token string">&quot;heading&quot;</span><span class="token punctuation">,</span>
       <span class="token string">&quot;|&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;alignment&quot;</span><span class="token punctuation">,</span> <span class="token comment">// &lt;--- 添加在此处</span>
+      <span class="token string">&quot;alignment&quot;</span><span class="token punctuation">,</span> <span class="token comment">// &lt;--- \u6DFB\u52A0\u5728\u6B64\u5904</span>
       <span class="token string">&quot;bold&quot;</span><span class="token punctuation">,</span>
       <span class="token string">&quot;italic&quot;</span><span class="token punctuation">,</span>
       <span class="token string">&quot;link&quot;</span><span class="token punctuation">,</span>
@@ -91,19 +75,19 @@ ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="
       <span class="token string">&quot;imageTextAlternative&quot;</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token comment">// 如果要改成中文,将 language 改为 zh</span>
-  <span class="token comment">// 注:这里要和webpack.config.js文件里的语言保持一致</span>
+  <span class="token comment">// \u5982\u679C\u8981\u6539\u6210\u4E2D\u6587,\u5C06 language \u6539\u4E3A zh</span>
+  <span class="token comment">// \u6CE8:\u8FD9\u91CC\u8981\u548Cwebpack.config.js\u6587\u4EF6\u91CC\u7684\u8BED\u8A00\u4FDD\u6301\u4E00\u81F4</span>
   language<span class="token operator">:</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre></div><h2 id="上传适配器" tabindex="-1">上传适配器 <a class="header-anchor" href="#上传适配器" aria-hidden="true">#</a></h2><p>经常要在富文本编辑器中上传图片到自己的服务器上.所以要进行定制化.这里已<strong>阿里 OSS</strong>为例</p><h3 id="自定义上传适配器" tabindex="-1">自定义上传适配器 <a class="header-anchor" href="#自定义上传适配器" aria-hidden="true">#</a></h3><p>新建<code>src/ali-ckeditor-upload.js</code>文件</p><div class="language-js"><pre><code><span class="token keyword">import</span> Plugin <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-core/src/plugin&quot;</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="\u4E0A\u4F20\u9002\u914D\u5668" tabindex="-1">\u4E0A\u4F20\u9002\u914D\u5668 <a class="header-anchor" href="#\u4E0A\u4F20\u9002\u914D\u5668" aria-hidden="true">#</a></h2><p>\u7ECF\u5E38\u8981\u5728\u5BCC\u6587\u672C\u7F16\u8F91\u5668\u4E2D\u4E0A\u4F20\u56FE\u7247\u5230\u81EA\u5DF1\u7684\u670D\u52A1\u5668\u4E0A.\u6240\u4EE5\u8981\u8FDB\u884C\u5B9A\u5236\u5316.\u8FD9\u91CC\u5DF2<strong>\u963F\u91CC OSS</strong>\u4E3A\u4F8B</p><h3 id="\u81EA\u5B9A\u4E49\u4E0A\u4F20\u9002\u914D\u5668" tabindex="-1">\u81EA\u5B9A\u4E49\u4E0A\u4F20\u9002\u914D\u5668 <a class="header-anchor" href="#\u81EA\u5B9A\u4E49\u4E0A\u4F20\u9002\u914D\u5668" aria-hidden="true">#</a></h3><p>\u65B0\u5EFA<code>src/ali-ckeditor-upload.js</code>\u6587\u4EF6</p><div class="language-js"><pre><code><span class="token keyword">import</span> Plugin <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-core/src/plugin&quot;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> FileRepository <span class="token keyword">from</span> <span class="token string">&quot;@ckeditor/ckeditor5-upload/src/filerepository&quot;</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token constant">OSS</span> <span class="token keyword">from</span> <span class="token string">&quot;ali-oss&quot;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
-  region<span class="token operator">:</span> <span class="token string">&quot;&lt;你的 region&gt;&quot;</span><span class="token punctuation">,</span>
-  accessKeyId<span class="token operator">:</span> <span class="token string">&quot;&lt;你的 AccessKeyId&gt;&quot;</span><span class="token punctuation">,</span>
-  accessKeySecret<span class="token operator">:</span> <span class="token string">&quot;&lt;你的 AccessKeySecret&gt;&quot;</span><span class="token punctuation">,</span>
-  bucket<span class="token operator">:</span> <span class="token string">&quot;你的 bucket name&quot;</span><span class="token punctuation">,</span>
+  region<span class="token operator">:</span> <span class="token string">&quot;&lt;\u4F60\u7684 region&gt;&quot;</span><span class="token punctuation">,</span>
+  accessKeyId<span class="token operator">:</span> <span class="token string">&quot;&lt;\u4F60\u7684 AccessKeyId&gt;&quot;</span><span class="token punctuation">,</span>
+  accessKeySecret<span class="token operator">:</span> <span class="token string">&quot;&lt;\u4F60\u7684 AccessKeySecret&gt;&quot;</span><span class="token punctuation">,</span>
+  bucket<span class="token operator">:</span> <span class="token string">&quot;\u4F60\u7684 bucket name&quot;</span><span class="token punctuation">,</span>
   savePath<span class="token operator">:</span> <span class="token string">&quot;images/&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -140,7 +124,7 @@ ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="
   <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token function">random_string</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> img<span class="token punctuation">;</span>
   <span class="token keyword">return</span> path <span class="token operator">+</span> name<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment">// 自定义插件需要从Plugin继承</span>
+<span class="token comment">// \u81EA\u5B9A\u4E49\u63D2\u4EF6\u9700\u8981\u4ECEPlugin\u7EE7\u627F</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">AliUploadAdapter</span> <span class="token keyword">extends</span> <span class="token class-name">Plugin</span> <span class="token punctuation">{</span>
   <span class="token keyword">static</span> <span class="token keyword">get</span> <span class="token function">requires</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">[</span>FileRepository<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -162,7 +146,7 @@ ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="
     <span class="token keyword">this</span><span class="token punctuation">.</span>loader <span class="token operator">=</span> loader<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
-  <span class="token comment">// 开始上传过程。</span>
+  <span class="token comment">// \u5F00\u59CB\u4E0A\u4F20\u8FC7\u7A0B\u3002</span>
   <span class="token function">upload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>loader<span class="token punctuation">.</span>file<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
       <span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
@@ -174,14 +158,14 @@ ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="
   <span class="token punctuation">}</span>
 
   <span class="token keyword">async</span> <span class="token function">_initListeners</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject<span class="token punctuation">,</span> file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 使用其他存储服务器时,在此处修改下面代码,将 file 上传即可</span>
+    <span class="token comment">// \u4F7F\u7528\u5176\u4ED6\u5B58\u50A8\u670D\u52A1\u5668\u65F6,\u5728\u6B64\u5904\u4FEE\u6539\u4E0B\u9762\u4EE3\u7801,\u5C06 file \u4E0A\u4F20\u5373\u53EF</span>
     <span class="token keyword">try</span> <span class="token punctuation">{</span>
       <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token function">imgPath</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 生成随机图片链接</span>
-      <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>config<span class="token punctuation">.</span>bucket<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>config<span class="token punctuation">.</span>region<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.aliyuncs.com/</span><span class="token template-punctuation string">`</span></span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
+      <span class="token comment">// \u751F\u6210\u968F\u673A\u56FE\u7247\u94FE\u63A5</span>
+      <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">\`</span><span class="token string">http://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span>config<span class="token punctuation">.</span>bucket<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span>config<span class="token punctuation">.</span>region<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.aliyuncs.com/</span><span class="token template-punctuation string">\`</span></span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
       <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">multipartUpload</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> file<span class="token punctuation">,</span> <span class="token punctuation">{</span>
         <span class="token function-variable function">progress</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">p</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token comment">// 进度监听</span>
+          <span class="token comment">// \u8FDB\u5EA6\u76D1\u542C</span>
           <span class="token comment">// console.log(Math.round(p * 100));</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -198,7 +182,7 @@ ClassicEditor<span class="token punctuation">.</span>defaultConfig <span class="
     data<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;upload&quot;</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h3 id="添加自定义插件" tabindex="-1">添加自定义插件 <a class="header-anchor" href="#添加自定义插件" aria-hidden="true">#</a></h3><p>转到<code>src/ckeditor.js</code>，进行以下更改以加载此插件。</p><div class="language-diff"><pre><code><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import AliUploadAdapter from &quot;./ali-ckeditor-upload&quot;;
+</code></pre></div><h3 id="\u6DFB\u52A0\u81EA\u5B9A\u4E49\u63D2\u4EF6" tabindex="-1">\u6DFB\u52A0\u81EA\u5B9A\u4E49\u63D2\u4EF6 <a class="header-anchor" href="#\u6DFB\u52A0\u81EA\u5B9A\u4E49\u63D2\u4EF6" aria-hidden="true">#</a></h3><p>\u8F6C\u5230<code>src/ckeditor.js</code>\uFF0C\u8FDB\u884C\u4EE5\u4E0B\u66F4\u6539\u4EE5\u52A0\u8F7D\u6B64\u63D2\u4EF6\u3002</p><div class="language-diff"><pre><code><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">import AliUploadAdapter from &quot;./ali-ckeditor-upload&quot;;
 </span></span>
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -210,9 +194,4 @@ ClassicEditor.builtinPlugins = [
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {...};
-</code></pre></div><p>重新<code>yarn build</code>打开<code>sample/index.html</code>查看效果</p></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-fb8d84c6><div class="edit" data-v-fb8d84c6><div class="edit-link" data-v-fb8d84c6 data-v-1ed99556><!----></div></div><div class="updated" data-v-fb8d84c6><!----></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--><!--    <Comment/>--><div class="site-footer"> MIT Licensed | Copyright © 2021 <a class="vitepress" href="https://github.com/logyxiao/vitepress-blog">logyxiao</a><br> Powered by <a class="vitepress" target="_blank" href="//vitepress.vuejs.org/">VitePress</a></div><!--]--></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"8f319da1\",\"pages_about.md\":\"8983553a\",\"pages_archives.md\":\"80005e8e\",\"pages_tags.md\":\"d8763247\",\"posts_book_homebook.md\":\"f7809d89\",\"posts_book_ldj.md\":\"36002fd8\",\"posts_book_lifefairy.md\":\"601b00a2\",\"posts_book_sixlife.md\":\"d57a5894\",\"posts_book_tlbb.md\":\"708d58f5\",\"posts_book_wirterule.md\":\"0633edbd\",\"posts_financing_base.md\":\"63eb1053\",\"posts_frontend_ckeditor5.md\":\"1983f2ef\",\"posts_frontend_promise.md\":\"255b530a\",\"posts_frontend_strapi.md\":\"0ad937b3\",\"posts_jotting_talklove.md\":\"28e702d1\",\"posts_mac.md\":\"bad38931\"}")</script>
-    <script type="module" async src="/assets/app.cf061c27.js"></script>
-    
-  </body>
-</html>
+</code></pre></div><p>\u91CD\u65B0<code>yarn build</code>\u6253\u5F00<code>sample/index.html</code>\u67E5\u770B\u6548\u679C</p>__VP_STATIC_END__`,20),e=[o];function c(l,u,i,k,r,d){return a(),s("div",null,e)}var y=n(p,[["render",c]]);export{m as __pageData,y as default};
