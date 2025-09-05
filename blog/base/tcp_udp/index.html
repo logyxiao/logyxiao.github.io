@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.13.5"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/blog/base/tcp_udp/"><!-- Primary Meta Tags --><title>TCP和UDP</title><meta name="title" content="TCP和UDP"><meta name="description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/blog/base/tcp_udp/"><meta property="og:title" content="TCP和UDP"><meta property="og:description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><meta property="og:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/blog/base/tcp_udp/"><meta property="twitter:title" content="TCP和UDP"><meta property="twitter:description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><meta property="twitter:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><link rel="stylesheet" href="/_astro/about.B7LdpUgH.css">
+<style>main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 首页 </a>  <a href="/zh-cn/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/zh-cn/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 影视 </a>  <a href="/zh-cn/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  <div class="language-dropdown" data-astro-cid-d2mhfzrs> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-d2mhfzrs> <span data-astro-cid-d2mhfzrs>语言</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-d2mhfzrs></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-d2mhfzrs> <a href="/zh-cn/blog/base/tcp_udp/" class="dropdown-item active" data-lang="zh-cn" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>简体中文</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-d2mhfzrs></path> </svg> </a><a href="/en/blog/base/tcp_udp/" class="dropdown-item " data-lang="en" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>English</span>  </a> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const o=document.getElementById("language-trigger"),t=document.getElementById("language-menu"),r=document.querySelector(".language-dropdown");if(!o||!t||!r)return;const s=()=>{t.classList.toggle("show");const e=o.querySelector(".dropdown-arrow");e&&(e.style.transform=t.classList.contains("show")?"rotate(180deg)":"")};o.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),s()}),document.addEventListener("click",e=>{if(!r.contains(e.target)){t.classList.remove("show");const n=o.querySelector(".dropdown-arrow");n&&(n.style.transform="")}}),t.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",n=>{const a=e.getAttribute("href");a&&(window.location.href=a)})})});</script> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2020-02-29T00:00:00.000Z"> Feb 29, 2020 </time>  </div> <h1 data-astro-cid-bvzihdzo>TCP和UDP</h1> <hr data-astro-cid-bvzihdzo> </div>  <h2 id="tcp">TCP</h2>
+<p>传输控制协议（<code>TCP</code>）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由<code>IETF</code>的<code>RFC 793</code>定义。在简化的计算机网络<code>OSI</code>模型中的传输层。</p>
+<h3 id="tcp三次握手过程">TCP三次握手过程</h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229225736.png" alt=""></p>
+<ol>
+<li>客户端通过向服务器端发送一个<code>SYN</code>来创建一个主动打开，作为三次握手的一部分。客户端把这段连接的序号设定为随机数X。</li>
+<li>服务器端应当为一个合法的<code>SYN</code>回送一个<code>SYN/ACK</code>。<code>ACK</code>的确认码应为X+1，<code>SYN/ACK</code>包本身又有一个随机产生的序号Y。</li>
+<li>最后，客户端再发送一个<code>ACK</code>。此时包的序号被设定为X+1，而<code>ACK</code>的确认码则为Y+1。当服务端收到这个<code>ACK</code>的时候，就完成了三次握手，并进入了连接创建状态。</li>
+</ol>
+<p>3次握手的特点</p>
+<p>没有应用层的数据 ,SYN这个标志位只有在TCP建立连接时才会被置1 ,握手完成后SYN标志位被置0。</p>
+<h3 id="tcp的四次握手">TCP的四次握手</h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229230940.png" alt=""></p>
+<ol>
+<li>
+<p>当 客户端完成数据传输后,将控制位FIN置1，提出停止TCP连接的请求</p>
+</li>
+<li>
+<p>服务器收到FIN后对其作出响应，确认这一方向上的TCP连接将关闭,将ACK置1</p>
+</li>
+<li>
+<p>由服务器再提出反方向的关闭请求,将FIN置1</p>
+</li>
+<li>
+<p>客户端对服务器的请求进行确认，将ACK置1，双方向的关闭结束</p>
+</li>
+</ol>
+<h3 id="tcp的表头">TCP的表头</h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229221716.png" alt=""></p>
+<ul>
+<li>序列号（seq，32位长）
+<ul>
+<li>如果含有同步化旗标（SYN），则此为最初的序列号,第一个数据比特的序列码为本序列号加一。</li>
+<li>如果没有同步化旗标（SYN），则此为第一个数据比特的序列码。</li>
+</ul>
+</li>
+<li>窗口（WIN，16位长）
+<ul>
+<li>表示从确认号开始，本报文的发送方可以接收的字节数，即接收窗口大小。用于流量控制</li>
+</ul>
+</li>
+<li>标识符
+<ul>
+<li>URG=1：该字段为一表示本数据报的数据部分包含紧急信息，是一个高优先级数据报文，此时紧急指针有效。紧急数据一定位于当前数据包数据部分的最前面，紧急指针标明了紧急数据的尾部。</li>
+<li>ACK=1：该字段为一表示确认号字段有效。此外，TCP 还规定在连接建立后传送的所有报文段都必须把 ACK 置为一。</li>
+<li>PSH=1：该字段为一表示接收端应该立即将数据 push 给应用层，而不是等到缓冲区满后再提交。</li>
+<li>RST=1：该字段为一表示当前 TCP 连接出现严重问题，可能需要重新建立 TCP 连接，也可以用于拒绝非法的报文段和拒绝连接请求。</li>
+<li>SYN=1：当SYN=1，ACK=0时，表示当前报文段是一个连接请求报文。当SYN=1，ACK=1时，表示当前报文段是一个同意建立连接的应答报文。</li>
+<li>FIN=1：该字段为一表示此报文段是一个释放连接的请求报文。</li>
+</ul>
+</li>
+</ul>
+<h2 id="udp">UDP</h2>
+<p>用户数据报协议（<code>UDP</code>）是同一层内另一个重要的传输协议,是一个简单的面向数据报的通信协议,是一种无连接的协议。</p>
+<p><strong><code>UDP</code>有不提供数据包分组、组装和不能对数据包进行排序的缺点</strong>,也就是说，当报文发送之后，是无法得知其是否安全完整到达的。</p>
+<h3 id="特点">特点</h3>
+<ol>
+<li>
+<p><strong><code>UDP</code>是无连接的</strong>，即发送数据之前不需要建立连接，因此减少了开销和发送数据之前的时延。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>是不可靠的</strong>,因为<code>UDP</code>使用尽最大努力交付，即不保证可靠交付，因此主机不需要维持复杂的连接状态表。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>是面向报文的</strong>。发送方的<code>UDP</code>对应用程序交下来的报文，在添加首部后就向下交付IP层。<code>UDP</code>对应用层交下来的报文，既不合并，也不拆分，而是保留这些报文的边界。因此，应用程序必须选择合适大小的报文。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>没有拥塞控制</strong>,因此网络出现的拥塞不会使源主机的发送速率降低。很多的实时应用（如IP电话、实时视频会议等）要去源主机以恒定的速率发送数据，并且允许在网络发生拥塞时丢失一些数据，但却不允许数据有太多的时延。<code>UDP</code>正好符合这种要求。</p>
+</li>
+<li>
+<p><code>UDP</code>支持一对一、一对多、多对一和多对多的交互通信。</p>
+</li>
+<li>
+<p><code>UDP</code>的首部开销小，只有8个字节，比TCP的20个字节的首部要短。
+<img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229221347.png" alt=""></p>
+</li>
+</ol>
+<ul>
+<li>
+<p>源端口:在需要对方回信时选用。不需要时可用全0。</p>
+</li>
+<li>
+<p>目的端口:这在终点交付报文时必须要使用到。</p>
+</li>
+<li>
+<p>长度:UDP用户数据报的长度，其最小值是8（仅有首部）</p>
+</li>
+<li>
+<p>检验和:检测UDP用户数据报在传输中是否有错。有错就丢弃。</p>
+</li>
+</ul>
+<h3 id="tcp-与-udp-的区别"><code>TCP</code> 与 <code>UDP</code> 的区别</h3>
+<ol>
+<li>
+<p><code>TCP</code>基于连接,<code>UDP</code>是无连接</p>
+</li>
+<li>
+<p>对系统资源的要求（<code>TCP</code>较多，<code>UDP</code>少）</p>
+</li>
+<li>
+<p><code>UDP</code>程序结构较简单,速度快</p>
+</li>
+<li>
+<p>流模式与数据报模式</p>
+</li>
+<li>
+<p><code>TCP</code>保证数据正确性，<code>UDP</code>可能丢包</p>
+</li>
+<li>
+<p><code>TCP</code>保证数据顺序，<code>UDP</code>不保证。</p>
+</li>
+</ol>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2025 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  </body></html>

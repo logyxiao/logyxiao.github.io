@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.13.5"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/blog/frontend/interview/6/"><!-- Primary Meta Tags --><title>类型转换</title><meta name="title" content="类型转换"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/blog/frontend/interview/6/"><meta property="og:title" content="类型转换"><meta property="og:description" content><meta property="og:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/blog/frontend/interview/6/"><meta property="twitter:title" content="类型转换"><meta property="twitter:description" content><meta property="twitter:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><link rel="stylesheet" href="/_astro/about.B7LdpUgH.css">
+<style>main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 首页 </a>  <a href="/zh-cn/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/zh-cn/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 影视 </a>  <a href="/zh-cn/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  <div class="language-dropdown" data-astro-cid-d2mhfzrs> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-d2mhfzrs> <span data-astro-cid-d2mhfzrs>语言</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-d2mhfzrs></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-d2mhfzrs> <a href="/zh-cn/blog/frontend/interview/6/" class="dropdown-item active" data-lang="zh-cn" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>简体中文</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-d2mhfzrs></path> </svg> </a><a href="/en/blog/frontend/interview/6/" class="dropdown-item " data-lang="en" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>English</span>  </a> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const o=document.getElementById("language-trigger"),t=document.getElementById("language-menu"),r=document.querySelector(".language-dropdown");if(!o||!t||!r)return;const s=()=>{t.classList.toggle("show");const e=o.querySelector(".dropdown-arrow");e&&(e.style.transform=t.classList.contains("show")?"rotate(180deg)":"")};o.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),s()}),document.addEventListener("click",e=>{if(!r.contains(e.target)){t.classList.remove("show");const n=o.querySelector(".dropdown-arrow");n&&(n.style.transform="")}}),t.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",n=>{const a=e.getAttribute("href");a&&(window.location.href=a)})})});</script> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2020-02-23T00:00:00.000Z"> Feb 23, 2020 </time>  </div> <h1 data-astro-cid-bvzihdzo>类型转换</h1> <hr data-astro-cid-bvzihdzo> </div>  <p>类型转换是指将数据由一种类型变换为另一种类型。<strong>在编译器自动赋值时,会发生隐式转换</strong>，但在代码中，也可以用一些写法强制要求进行显式转换。例如：在表达式 5 + 2.0 中，整数 5 被隐式转换为浮点数，但 Number(“0x11”) 和 “0x11” 则被显式转换为数字 17。</p>
+<h2 id="转boolean">转Boolean</h2>
+<p>条件判断时,除了 <code>undefined</code>, <code>null</code>, <code>false</code>, <code>NaN</code>, <code>''</code>, <code>0</code>, <code>-0</code>,其他所有值都转为 <code>true</code>，包括所有对象。</p>
+<h2 id="转对象">转对象</h2>
+<p>对象在转换基本类型时，首先会调用 <code>valueOf</code> 然后调用 <code>toString</code>。</p>
+<ul>
+<li><code>valueOf</code>:  返回指定对象的原始值。</li>
+<li><code>toString</code>: 返回一个表示该对象的字符串</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Number</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> num </span><span style="color:#F97583">=</span><span style="color:#79B8FF">  15.26540</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">num.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// 15.2654</span></span>
+<span class="line"><span style="color:#E1E4E8">num.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">()  </span><span style="color:#6A737D">// "15.2654"</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> num </span><span style="color:#6A737D">// 16.2654</span></span>
+<span class="line"><span style="color:#9ECBFF">"1"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> num </span><span style="color:#6A737D">// 115.2654</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Array</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> array </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"ABC"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">-</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"><span style="color:#E1E4E8">array.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// (4) ["ABC", true, 12, -5]</span></span>
+<span class="line"><span style="color:#E1E4E8">array.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">()  </span><span style="color:#6A737D">// "ABC,true,12,-5"</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> array </span><span style="color:#6A737D">// "1ABC,true,12,-5"</span></span>
+<span class="line"><span style="color:#E1E4E8">array </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> array   </span><span style="color:#6A737D">//"ABC,true,12,-5ABC,true,12,-5"  注意这里是字符串,而不是数组</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 布尔值</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> bool </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">bool.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// true</span></span>
+<span class="line"><span style="color:#E1E4E8">bool.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// "true"</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> bool </span><span style="color:#6A737D">// 2</span></span>
+<span class="line"><span style="color:#E1E4E8">bool </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> bool </span><span style="color:#6A737D">// 2</span></span>
+<span class="line"><span style="color:#9ECBFF">"1"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> bool </span><span style="color:#6A737D">// "1true"</span></span>
+<span class="line"><span style="color:#6A737D">// 若布尔值为 false ,转为 number 时的值为 0</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> bool </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> bool </span><span style="color:#6A737D">// 1</span></span>
+<span class="line"><span style="color:#E1E4E8">bool </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> bool </span><span style="color:#6A737D">// 0</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Function</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> foo</span><span style="color:#E1E4E8">(){}</span></span>
+<span class="line"><span style="color:#E1E4E8">foo.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// ƒ foo(){}</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> foo2 </span><span style="color:#F97583">=</span><span style="color:#F97583">  new</span><span style="color:#B392F0"> Function</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"x"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"y"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"return x + y;"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">foo2.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#6A737D">/*</span></span>
+<span class="line"><span style="color:#6A737D">ƒ anonymous(x,y</span></span>
+<span class="line"><span style="color:#6A737D">) {</span></span>
+<span class="line"><span style="color:#6A737D">return x + y;</span></span>
+<span class="line"><span style="color:#6A737D">}</span></span>
+<span class="line"><span style="color:#6A737D">*/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Object</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> obj </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {name: </span><span style="color:#9ECBFF">"张三"</span><span style="color:#E1E4E8">, age: </span><span style="color:#79B8FF">18</span><span style="color:#E1E4E8">};</span></span>
+<span class="line"><span style="color:#E1E4E8">obj.</span><span style="color:#B392F0">valueOf</span><span style="color:#E1E4E8">()   </span><span style="color:#6A737D">// {name: "张三", age: 18}</span></span>
+<span class="line"><span style="color:#E1E4E8">obj.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">()  </span><span style="color:#6A737D">// "[object Object]"</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> obj </span><span style="color:#6A737D">//  "1[object Object]"</span></span>
+<span class="line"><span style="color:#E1E4E8">obj </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> obj </span><span style="color:#6A737D">//    "[object Object][object Object]"</span></span>
+<span class="line"></span></code></pre>
+<p><strong>注意</strong>：字符串上下文中的对象通过 <code>toString()</code>方法转换，这与使用<code>valueOf</code>转换为原始字符串的String对象不同。所有对象都能转换成一个<code>“[object 类型]”</code>这种格式的字符串。但是很多对象不能转换为数字，布尔或函数。</p>
+<p>重写<code> valueOf()</code>和<code>toSting</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  valueOf</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  toString</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> 'a'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> a </span><span style="color:#6A737D">// => 1</span></span>
+<span class="line"><span style="color:#9ECBFF">'1'</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> a </span><span style="color:#6A737D">// => '10'</span></span></code></pre>
+<p>也可以重写 <code>Symbol.toPrimitive</code> ，该方法在转基本类型时调用优先级最高</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> obj</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    valueOf</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    [Symbol.toPrimitive](</span><span style="color:#FFAB70">hint</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (hint </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> 'number'</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#79B8FF"> 42</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span><span style="color:#F97583">else</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8">(hint </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> 'string'</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#9ECBFF"> "hello"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">+</span><span style="color:#E1E4E8">obj2);     </span><span style="color:#6A737D">// 42      -- hint 参数值是 "number"</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`${</span><span style="color:#E1E4E8">obj2</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// "hello" -- hint 参数值是 "string"</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(obj2 </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// "true"  -- hint 参数值是 "default"</span></span>
+<span class="line"></span></code></pre>
+<h2 id="四则运算符">四则运算符</h2>
+<ul>
+<li>加法运算时:一方是字符串类型，就会把另一个也转为字符串类型。并且<strong>加法运算会触发三种类型转换：将值转换为原始值，转换为数字，转换为字符串。</strong></li>
+<li>其他运算符:一方是数字，那么另一方就转为数字。
+若为字符串会转换为数字,转换失败结果会为<code>NaN</code></li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// 一方为数字</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#9ECBFF"> '1'</span><span style="color:#6A737D"> // '11'</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#F97583"> *</span><span style="color:#9ECBFF"> '2'</span><span style="color:#6A737D"> // 4</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#F97583"> /</span><span style="color:#9ECBFF"> '2'</span><span style="color:#6A737D"> // 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 都不为数字</span></span>
+<span class="line"><span style="color:#9ECBFF">'4'</span><span style="color:#F97583"> /</span><span style="color:#9ECBFF"> '2'</span><span style="color:#6A737D"> // 2</span></span>
+<span class="line"><span style="color:#9ECBFF">'2a'</span><span style="color:#F97583"> *</span><span style="color:#9ECBFF"> '2'</span><span style="color:#6A737D"> // NaN</span></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">'a'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'b'</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'c'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'d'</span><span style="color:#E1E4E8">] </span><span style="color:#6A737D">// '"a,bc,d",此次为字符串拼接</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 特殊</span></span>
+<span class="line"><span style="color:#9ECBFF">'a'</span><span style="color:#F97583"> +</span><span style="color:#F97583"> +</span><span style="color:#9ECBFF"> 'b'</span><span style="color:#6A737D"> // -> "aNaN"</span></span>
+<span class="line"><span style="color:#6A737D">// 因为 + '1' -> 1</span></span>
+<span class="line"><span style="color:#6A737D">// + 'b' -> NaN</span></span></code></pre>
+<h2 id="相等性判断">相等性判断</h2>
+<p>JavaScript提供三种不同的值比较操作：</p>
+<ul>
+<li>严格相等 ,类型和值都相等,使用 <code>=== </code></li>
+<li>宽松相等 ,值相等,使用 <code>==</code></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is">Object.is</a> （ES6 新特性, 确定两个值是否<strong>相同</strong>。）</li>
+</ul>
+<p>一般而言，所有的对象都与 <code>undefined</code> 和 <code>null</code> 不相等。但是大部分浏览器允许非常窄的一类对象（即，所有页面中的 document.all 对象），在某些情况下，充当效仿 undefined 的角色。</p>
+<p>判断<code>x==y</code>,其中<code>x</code>和<code>y</code>都是值</p>
+<ol>
+<li>
+<p>若<code>x</code>和<code>y</code>类型相等</p>
+<ol>
+<li><code>x</code>类型为<code>Null</code>,返回<code>true</code></li>
+<li><code>x</code>类型为<code>Undefined</code>,返回<code>true</code></li>
+<li><code>x</code>类型为<code>Number</code>,则
+<ol>
+<li><code>x</code>为<code>NaN</code>,返回<code>false</code></li>
+<li><code>y</code>为<code>NaN</code>,返回<code>false</code></li>
+<li><code>x</code>为<code>+0</code>且<code>y</code>为<code>-0</code>,返回<code>true</code></li>
+<li><code>x</code>为<code>-0</code>且<code>y</code>为<code>+0</code>,返回<code>true</code></li>
+<li><code>x</code>和<code>y</code>数值相等,返回<code>true</code></li>
+<li>返回 <code>false</code></li>
+</ol>
+</li>
+<li><code>x</code>类型为<code>String</code>,若<code>x</code>和<code>y</code>为完全相同的字符序列,返回<code>true</code>.否则,返回<code>false</code></li>
+<li><code>x</code>类型为<code>Boolean</code>,同为<code>true</code>或者<code>false</code>时返回<code>true</code>.否则,返回<code>false</code>
+6.同为引用同一对象时返回<code>true</code>.否则,返回<code>false</code></li>
+</ol>
+</li>
+<li>
+<p>若<code>x</code>为<code>null</code>且y为<code>undefined</code>, 返回<code>true</code>。</p>
+</li>
+<li>
+<p>若<code>x</code>为<code>undefined</code>且y为<code>null</code>, 返回<code>true</code>。</p>
+</li>
+<li>
+<p>若<code>Type(x)</code>为<code>Number且Type(y)</code>为<code>String</code>，返回<code>comparison x</code> == <code>ToNumber(y)</code>的结果。</p>
+</li>
+<li>
+<p>若<code>Type(x)</code>为<code>String</code> 且<code>Type(y)</code>为<code>Number</code>,.返回比较<code>ToNumber(x)</code> == <code>y</code>的结果。</p>
+</li>
+<li>
+<p>若<code>Type(x)</code>为<code>Boolean</code>, 返回比较<code>ToNumber(x)</code> == y的结果。</p>
+</li>
+<li>
+<p>若Type(y)为<code>Boolean</code>，返回比较x == <code>ToNumber(y)</code>的结果。</p>
+</li>
+<li>
+<p>若<code>Type(x)</code>为<code>String</code>或<code>Number</code>, 且<code>Type(y)</code>为<code>Object</code>, 返回比较<code>x</code> == <code>ToPrimitive(y)</code>的结果。</p>
+</li>
+<li>
+<p>若<code>Type(x)</code>为Object且<code>Type(y)</code>为<code>String</code>或<code>Number</code>, 返回比较<code>ToPrimitive(x)</code> == <code>y</code>的结果。返回<code>false</code>。</p>
+</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> '1'</span><span style="color:#6A737D"> // true</span></span>
+<span class="line"><span style="color:#79B8FF">null</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> undefined</span><span style="color:#6A737D"> // true</span></span>
+<span class="line"><span style="color:#79B8FF">null</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.all </span><span style="color:#6A737D">// true</span></span>
+<span class="line"><span style="color:#79B8FF">undefined</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.all </span><span style="color:#6A737D">// true</span></span></code></pre>
+<p>现在来解析一道题目 <code>[] == ![] // -> true</code> ，下面是这个表达式为何为 <code>true</code> 的步骤</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// [] 转成 true，然后取反变成 false</span></span>
+<span class="line"><span style="color:#E1E4E8">[] </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> false</span></span>
+<span class="line"><span style="color:#6A737D">// 根据第 8 条得出</span></span>
+<span class="line"><span style="color:#E1E4E8">[] </span><span style="color:#F97583">==</span><span style="color:#B392F0"> ToNumber</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">[] </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#6A737D">// 根据第 10 条得出</span></span>
+<span class="line"><span style="color:#B392F0">ToPrimitive</span><span style="color:#E1E4E8">([]) </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#6A737D">// [].toString() -> ''</span></span>
+<span class="line"><span style="color:#9ECBFF">''</span><span style="color:#F97583"> ==</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#6A737D">// 根据第 6 条得出</span></span>
+<span class="line"><span style="color:#79B8FF">0</span><span style="color:#F97583"> ==</span><span style="color:#79B8FF"> 0</span><span style="color:#6A737D"> // -> true</span></span></code></pre>
+<p>总结:<code>[] == ! []   ->   [] == false  ->  [] == 0  ->   '' == 0   ->  0 == 0   ->  true</code></p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2025 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  </body></html>

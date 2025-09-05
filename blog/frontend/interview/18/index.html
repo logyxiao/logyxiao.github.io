@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.13.5"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/blog/frontend/interview/18/"><!-- Primary Meta Tags --><title>JavaScript基础</title><meta name="title" content="JavaScript基础"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/blog/frontend/interview/18/"><meta property="og:title" content="JavaScript基础"><meta property="og:description" content><meta property="og:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/blog/frontend/interview/18/"><meta property="twitter:title" content="JavaScript基础"><meta property="twitter:description" content><meta property="twitter:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><link rel="stylesheet" href="/_astro/about.B7LdpUgH.css">
+<style>main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 首页 </a>  <a href="/zh-cn/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/zh-cn/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 影视 </a>  <a href="/zh-cn/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  <div class="language-dropdown" data-astro-cid-d2mhfzrs> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-d2mhfzrs> <span data-astro-cid-d2mhfzrs>语言</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-d2mhfzrs></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-d2mhfzrs> <a href="/zh-cn/blog/frontend/interview/18/" class="dropdown-item active" data-lang="zh-cn" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>简体中文</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-d2mhfzrs></path> </svg> </a><a href="/en/blog/frontend/interview/18/" class="dropdown-item " data-lang="en" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>English</span>  </a> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const o=document.getElementById("language-trigger"),t=document.getElementById("language-menu"),r=document.querySelector(".language-dropdown");if(!o||!t||!r)return;const s=()=>{t.classList.toggle("show");const e=o.querySelector(".dropdown-arrow");e&&(e.style.transform=t.classList.contains("show")?"rotate(180deg)":"")};o.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),s()}),document.addEventListener("click",e=>{if(!r.contains(e.target)){t.classList.remove("show");const n=o.querySelector(".dropdown-arrow");n&&(n.style.transform="")}}),t.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",n=>{const a=e.getAttribute("href");a&&(window.location.href=a)})})});</script> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2020-04-03T00:00:00.000Z"> Apr 3, 2020 </time>  </div> <h1 data-astro-cid-bvzihdzo>JavaScript基础</h1> <hr data-astro-cid-bvzihdzo> </div>  <p>1.JavaScript规定了几种语言类型</p>
+<p>2.JavaScript对象的底层数据结构是什么</p>
+<p>3.Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol</p>
+<p>4.JavaScript中的变量在内存中的具体存储形式</p>
+<p>5.基本类型对应的内置对象，以及他们之间的装箱拆箱操作</p>
+<p>6.理解值类型和引用类型</p>
+<p>7.null和undefined的区别</p>
+<p>8.至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型</p>
+<p>9.可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用</p>
+<p>10.出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法</p>
+<p>原型和原型链</p>
+<p>1.理解原型设计模式以及JavaScript中的原型规则</p>
+<p>2.instanceof的底层实现原理，手动实现一个instanceof</p>
+<p>4.实现继承的几种方式以及他们的优缺点</p>
+<p>5.至少说出一种开源项目(如Node)中应用原型继承的案例</p>
+<p>6.可以描述new一个对象的详细过程，手动实现一个new操作符</p>
+<p>7.理解es6 class构造以及继承的底层实现原理</p>
+<p>作用域和闭包</p>
+<p>1.理解词法作用域和动态作用域</p>
+<p>2.理解JavaScript的作用域和作用域链</p>
+<p>3.理解JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题</p>
+<p>4.this的原理以及几种不同使用场景的取值</p>
+<p>5.闭包的实现原理和作用，可以列举几个开发中闭包的实际应用</p>
+<p>6.理解堆栈溢出和内存泄漏的原理，如何防止</p>
+<p>7.如何处理循环的异步操作</p>
+<p>8.理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理</p>
+<p>执行机制</p>
+<p>1.为何try里面放return，finally还会执行，理解其内部机制</p>
+<p>2.JavaScript如何实现异步编程，可以详细描述EventLoop机制</p>
+<p>3.宏任务和微任务分别有哪些</p>
+<p>4.可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法</p>
+<p>5.使用Promise实现串行</p>
+<p>6.Node与浏览器EventLoop的差异</p>
+<p>7.如何在保证页面运行流畅的情况下处理海量数据</p>
+<p>语法和API</p>
+<p>1.理解ECMAScript和JavaScript的关系</p>
+<p>2.熟练运用es5、es6提供的语法规范，</p>
+<p>3.熟练掌握JavaScript提供的全局对象（例如Date、Math）、全局函数（例如decodeURI、isNaN）、全局属性（例如Infinity、undefined）</p>
+<p>4.熟练应用map、reduce、filter 等高阶函数解决问题</p>
+<p>5.setInterval需要注意的点，使用settimeout实现setInterval</p>
+<p>6.JavaScript提供的正则表达式API、可以使用正则表达式（邮箱校验、URL解析、去重等）解决常见问题</p>
+<p>7.JavaScript异常处理的方式，统一的异常处理方案</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2025 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  </body></html>

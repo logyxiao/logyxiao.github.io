@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.13.5"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/blog/frontend/ckeditor5/"><!-- Primary Meta Tags --><title>「CKEditor5」富文本编辑器定制</title><meta name="title" content="「CKEditor5」富文本编辑器定制"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/blog/frontend/ckeditor5/"><meta property="og:title" content="「CKEditor5」富文本编辑器定制"><meta property="og:description" content><meta property="og:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/blog/frontend/ckeditor5/"><meta property="twitter:title" content="「CKEditor5」富文本编辑器定制"><meta property="twitter:description" content><meta property="twitter:image" content="https://logyxiao.cc/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><link rel="stylesheet" href="/_astro/about.B7LdpUgH.css">
+<style>main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 首页 </a>  <a href="/zh-cn/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 博客 </a>  <a href="/zh-cn/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 影视 </a>  <a href="/zh-cn/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> 关于 </a>  <div class="language-dropdown" data-astro-cid-d2mhfzrs> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-d2mhfzrs> <span data-astro-cid-d2mhfzrs>语言</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-d2mhfzrs></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-d2mhfzrs> <a href="/zh-cn/blog/frontend/ckeditor5/" class="dropdown-item active" data-lang="zh-cn" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>简体中文</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-d2mhfzrs> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-d2mhfzrs></path> </svg> </a><a href="/en/blog/frontend/ckeditor5/" class="dropdown-item " data-lang="en" data-astro-cid-d2mhfzrs> <span class="lang-name" data-astro-cid-d2mhfzrs>English</span>  </a> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const o=document.getElementById("language-trigger"),t=document.getElementById("language-menu"),r=document.querySelector(".language-dropdown");if(!o||!t||!r)return;const s=()=>{t.classList.toggle("show");const e=o.querySelector(".dropdown-arrow");e&&(e.style.transform=t.classList.contains("show")?"rotate(180deg)":"")};o.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),s()}),document.addEventListener("click",e=>{if(!r.contains(e.target)){t.classList.remove("show");const n=o.querySelector(".dropdown-arrow");n&&(n.style.transform="")}}),t.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",n=>{const a=e.getAttribute("href");a&&(window.location.href=a)})})});</script> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2020-12-04T00:00:00.000Z"> Dec 4, 2020 </time>  </div> <h1 data-astro-cid-bvzihdzo>「CKEditor5」富文本编辑器定制</h1> <hr data-astro-cid-bvzihdzo> </div>  <h2 id="为什么使用ckeditor5">为什么使用<a href="https://ckeditor.com/ckeditor-5/">CKEditor5</a></h2>
+<ul>
+<li><strong>方便集成</strong>:可以与 Angular，React 和 Vue.js 集成,也可以和 Electron 和移动设备（Android，iOS）兼容。</li>
+<li><strong>可定制化</strong>:可以自定义自己所需的编辑功能,如自动格式化,上传适配器,导出 PDF 等功能</li>
+</ul>
+<h2 id="安装使用">安装使用</h2>
+<h3 id="1创建自己的-ckeditor">1.创建自己的 CKEditor</h3>
+<p>有关更多详细信息，请查看此<a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html">官方教程</a>。也可以使用<a href="https://ckeditor.com/ckeditor-5/online-builder/">官方在线定制</a>选择自己需要的功能组件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">git.md</span><span style="color:#9ECBFF"> clone</span><span style="color:#79B8FF"> -b</span><span style="color:#9ECBFF"> stable</span><span style="color:#9ECBFF"> https://github.com/ckeditor/ckeditor5-build-classic.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ckeditor5-build-classic</span></span>
+<span class="line"><span style="color:#6A737D"># 下载依赖</span></span>
+<span class="line"><span style="color:#B392F0">yarn</span></span>
+<span class="line"><span style="color:#6A737D"># 构建</span></span>
+<span class="line"><span style="color:#B392F0">yarn</span><span style="color:#9ECBFF"> build</span></span></code></pre>
+<p>构建完成后，您将在<code>build</code>文件夹中获得一个自定义 CKEditor 。</p>
+<p>打开<code>sample/index.html</code>查看效果</p>
+<h2 id="功能插件">功能插件</h2>
+<ol>
+<li>找到自己所需的功能插件,可以在<a href="https://www.npmjs.com/search?q=ckeditor">npm</a>上搜索.</li>
+<li>例如文本对齐插件
+<code>yarn add @ckeditor/ckeditor5-alignment</code></li>
+<li>编辑<code>src/ckeditor.js</code>文件以将插件添加到将包含在构建中的插件列表中</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// The editor creator to use.</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ClassicEditorBase </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-editor-classic/src/classiceditor"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Essentials </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-essentials/src/essentials"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UploadAdapter </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Autoformat </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-autoformat/src/autoformat"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Bold </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-basic-styles/src/bold"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Italic </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-basic-styles/src/italic"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BlockQuote </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-block-quote/src/blockquote"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> EasyImage </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-easy-image/src/easyimage"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Heading </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-heading/src/heading"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Image </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-image/src/image"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ImageCaption </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-image/src/imagecaption"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ImageStyle </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-image/src/imagestyle"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ImageToolbar </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-image/src/imagetoolbar"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ImageUpload </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-image/src/imageupload"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Link </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-link/src/link"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-list/src/list"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Paragraph </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-paragraph/src/paragraph"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Alignment </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-alignment/src/alignment"</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// &#x3C;--- 添加在此处</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ClassicEditor</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ClassicEditorBase</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 引入所需插件.</span></span>
+<span class="line"><span style="color:#E1E4E8">ClassicEditor.builtinPlugins </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  Essentials,</span></span>
+<span class="line"><span style="color:#E1E4E8">  UploadAdapter,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Autoformat,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Bold,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Italic,</span></span>
+<span class="line"><span style="color:#E1E4E8">  BlockQuote,</span></span>
+<span class="line"><span style="color:#E1E4E8">  EasyImage,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Heading,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Image,</span></span>
+<span class="line"><span style="color:#E1E4E8">  ImageCaption,</span></span>
+<span class="line"><span style="color:#E1E4E8">  ImageStyle,</span></span>
+<span class="line"><span style="color:#E1E4E8">  ImageToolbar,</span></span>
+<span class="line"><span style="color:#E1E4E8">  ImageUpload,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Link,</span></span>
+<span class="line"><span style="color:#E1E4E8">  List,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Paragraph,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Alignment, </span><span style="color:#6A737D">// &#x3C;--- 添加在此处</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 编辑器配置.</span></span>
+<span class="line"><span style="color:#E1E4E8">ClassicEditor.defaultConfig </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  toolbar: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    items: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "heading"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "|"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "alignment"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// &#x3C;--- 添加在此处</span></span>
+<span class="line"><span style="color:#9ECBFF">      "bold"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "italic"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "link"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "bulletedList"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "numberedList"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "imageUpload"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "blockQuote"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "undo"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "redo"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  image: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    toolbar: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "imageStyle:full"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "imageStyle:side"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "|"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "imageTextAlternative"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#6A737D">  // 如果要改成中文,将 language 改为 zh</span></span>
+<span class="line"><span style="color:#6A737D">  // 注:这里要和webpack.config.js文件里的语言保持一致</span></span>
+<span class="line"><span style="color:#E1E4E8">  language: </span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h2 id="上传适配器">上传适配器</h2>
+<p>经常要在富文本编辑器中上传图片到自己的服务器上.所以要进行定制化.这里已<strong>阿里 OSS</strong>为例</p>
+<h3 id="自定义上传适配器">自定义上传适配器</h3>
+<p>新建<code>src/ali-ckeditor-upload.js</code>文件</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Plugin </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-core/src/plugin"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FileRepository </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "@ckeditor/ckeditor5-upload/src/filerepository"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> OSS </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "ali-oss"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  region: </span><span style="color:#9ECBFF">"&#x3C;你的 region>"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  accessKeyId: </span><span style="color:#9ECBFF">"&#x3C;你的 AccessKeyId>"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  accessKeySecret: </span><span style="color:#9ECBFF">"&#x3C;你的 AccessKeySecret>"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  bucket: </span><span style="color:#9ECBFF">"你的 bucket name"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  savePath: </span><span style="color:#9ECBFF">"images/"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> client</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> OSS</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  region: config.region,</span></span>
+<span class="line"><span style="color:#E1E4E8">  accessKeyId: config.accessKeyId,</span></span>
+<span class="line"><span style="color:#E1E4E8">  accessKeySecret: config.accessKeySecret,</span></span>
+<span class="line"><span style="color:#E1E4E8">  bucket: config.bucket,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> random_string</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">len</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  len </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> len </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 32</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> chars </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> maxPos </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> chars.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> pwd </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> len; i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    pwd </span><span style="color:#F97583">+=</span><span style="color:#E1E4E8"> chars.</span><span style="color:#B392F0">charAt</span><span style="color:#E1E4E8">(Math.</span><span style="color:#B392F0">floor</span><span style="color:#E1E4E8">(Math.</span><span style="color:#B392F0">random</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> maxPos));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> pwd;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> today</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8"> () {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> now </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> year </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> now.</span><span style="color:#B392F0">getFullYear</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> month </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> now.</span><span style="color:#B392F0">getMonth</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> date </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> now.</span><span style="color:#B392F0">getDate</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> year </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> "-"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> month </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> "-"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> date;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> imgPath</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">img</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  img </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> img </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> ".png"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> path </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> config.savePath </span><span style="color:#F97583">+</span><span style="color:#B392F0"> today</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> "/"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> name </span><span style="color:#F97583">=</span><span style="color:#B392F0"> random_string</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> img;</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> path </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> name;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"><span style="color:#6A737D">// 自定义插件需要从Plugin继承</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> AliUploadAdapter</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> Plugin</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  static</span><span style="color:#F97583"> get</span><span style="color:#B392F0"> requires</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> [FileRepository];</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  static</span><span style="color:#F97583"> get</span><span style="color:#B392F0"> pluginName</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> "ali-ckeditor-upload"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  init</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.editor.plugins.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(FileRepository).</span><span style="color:#B392F0">createUploadAdapter</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">loader</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Adapter</span><span style="color:#E1E4E8">(loader);</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Adapter</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">loader</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.loader </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> loader;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // 开始上传过程。</span></span>
+<span class="line"><span style="color:#B392F0">  upload</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.loader.file.</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">      (</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span></span>
+<span class="line"><span style="color:#F97583">        new</span><span style="color:#79B8FF"> Promise</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">resolve</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">reject</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">          this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_initListeners</span><span style="color:#E1E4E8">(resolve, reject, file);</span></span>
+<span class="line"><span style="color:#79B8FF">          this</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">_sendRequest</span><span style="color:#E1E4E8">(file);</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  async</span><span style="color:#B392F0"> _initListeners</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">resolve</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">reject</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // 使用其他存储服务器时,在此处修改下面代码,将 file 上传即可</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      let</span><span style="color:#E1E4E8"> name </span><span style="color:#F97583">=</span><span style="color:#B392F0"> imgPath</span><span style="color:#E1E4E8">(file.name);</span></span>
+<span class="line"><span style="color:#6A737D">      // 生成随机图片链接</span></span>
+<span class="line"><span style="color:#F97583">      let</span><span style="color:#E1E4E8"> url </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> `http://${</span><span style="color:#E1E4E8">config</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">bucket</span><span style="color:#9ECBFF">}.${</span><span style="color:#E1E4E8">config</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">region</span><span style="color:#9ECBFF">}.aliyuncs.com/`</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> name;</span></span>
+<span class="line"><span style="color:#F97583">      let</span><span style="color:#E1E4E8"> result </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> client.</span><span style="color:#B392F0">multipartUpload</span><span style="color:#E1E4E8">(name, file, {</span></span>
+<span class="line"><span style="color:#B392F0">        progress</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">          // 进度监听</span></span>
+<span class="line"><span style="color:#6A737D">          // console.log(Math.round(p * 100));</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#B392F0">      resolve</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        default: url,</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (e) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(e);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  _sendRequest</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FormData</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    data.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"upload"</span><span style="color:#E1E4E8">, file);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="添加自定义插件">添加自定义插件</h3>
+<p>转到<code>src/ckeditor.js</code>，进行以下更改以加载此插件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="diff"><code><span class="line"><span style="color:#85E89D"><span style="user-select: none;">+</span>import AliUploadAdapter from "./ali-ckeditor-upload";</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">export default class ClassicEditor extends ClassicEditorBase {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">// Plugins to include in the build.</span></span>
+<span class="line"><span style="color:#E1E4E8">ClassicEditor.builtinPlugins = [</span></span>
+<span class="line"><span style="color:#E1E4E8">	...,</span></span>
+<span class="line"><span style="color:#85E89D"><span style="user-select: none;">+</span>	AliUploadAdapter</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">// Editor configuration.</span></span>
+<span class="line"><span style="color:#E1E4E8">ClassicEditor.defaultConfig = {...};</span></span></code></pre>
+<p>重新<code>yarn build</code>打开<code>sample/index.html</code>查看效果</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2025 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  </body></html>
