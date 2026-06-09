@@ -1,1 +1,134 @@
-<!doctype html><title>Redirecting to: /blog/frontend/vue/5/</title><meta http-equiv="refresh" content="2;url=/blog/frontend/vue/5/"><meta name="robots" content="noindex"><link rel="canonical" href="https://logyxiao.cc/blog/frontend/vue/5/"><body>	<a href="/blog/frontend/vue/5/">Redirecting from <code>/en/blog/frontend/vue/5/</code> to <code>/blog/frontend/vue/5/</code></a></body>
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><!-- 防止样式闪烁的优化 --><style>
+	/* 防止FOUC的最小CSS */
+	html { visibility: hidden; opacity: 0; }
+	html.loaded { visibility: visible; opacity: 1; transition: opacity 0.3s ease; }
+	/* 基础字体和背景 */
+	body { 
+		font-family: 'Roboto', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+		background-color: #ffffff;
+		color: #171717;
+		line-height: 1.6;
+	}
+</style><!-- CSS预加载 --><link rel="preload" href="/_astro/global.css" as="style"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.18.2"><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/en/blog/frontend/vue/5/"><!-- Primary Meta Tags --><title>Vue-xlsx-table 将Excel转为JSON</title><meta name="title" content="Vue-xlsx-table 将Excel转为JSON"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/en/blog/frontend/vue/5/"><meta property="og:title" content="Vue-xlsx-table 将Excel转为JSON"><meta property="og:description" content><meta property="og:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/en/blog/frontend/vue/5/"><meta property="twitter:title" content="Vue-xlsx-table 将Excel转为JSON"><meta property="twitter:description" content><meta property="twitter:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- 防止FOUC的脚本 --><script>
+	// 页面加载完成后显示内容
+	document.addEventListener('DOMContentLoaded', () => {
+		document.documentElement.classList.add('loaded');
+	});
+	
+	// 如果DOMContentLoaded已经触发（例如缓存页面）
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			document.documentElement.classList.add('loaded');
+		});
+	} else {
+		document.documentElement.classList.add('loaded');
+	}
+</script><link rel="stylesheet" href="/_astro/WalineComment.Ca7MAHcU.css">
+<link rel="stylesheet" href="/_astro/_slug_.C7e_TW9c.css">
+<link rel="stylesheet" href="/_astro/_slug_.CMcvKPF-.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <!-- 桌面端导航 --> <div class="desktop-nav hidden md:flex" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/en/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/en/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Movies </a>  <a href="/en/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  <!-- 桌面端语言切换 --> <div class="language-dropdown" data-astro-cid-3ef6ksr2> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>Language</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-3ef6ksr2> <a href="/blog/frontend/vue/5" class="dropdown-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/frontend/vue/5" class="dropdown-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> <!-- 移动端汉堡菜单 --> <div class="mobile-nav md:hidden flex px-3 flex items-center" data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <button class="hamburger-menu" id="mobile-menu-trigger" aria-label="打开菜单" data-astro-cid-3ef6ksr2> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- 移动端菜单面板 - 移到 header 外部 --> <div class="mobile-menu-overlay" id="mobile-menu-overlay" data-astro-cid-3ef6ksr2></div> <div class="mobile-menu-panel" id="mobile-menu-panel" data-astro-cid-3ef6ksr2> <div class="mobile-menu-header " data-astro-cid-3ef6ksr2> <button class="close-button" id="mobile-menu-close" aria-label="关闭菜单" data-astro-cid-3ef6ksr2> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> <div class="mobile-menu-content" data-astro-cid-3ef6ksr2> <nav class="mobile-nav-links" data-astro-cid-3ef6ksr2> <a href="/en/" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" data-astro-cid-3ef6ksr2></path> </svg> Home </a> <a href="/en/blog" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" data-astro-cid-3ef6ksr2></path> </svg> Blog </a> <a href="/en/movies" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" data-astro-cid-3ef6ksr2></path> </svg> Movies </a> <a href="/en/about" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" data-astro-cid-3ef6ksr2></path> </svg> About </a> </nav> <!-- 移动端语言切换 --> <div class="mobile-language-section" data-astro-cid-3ef6ksr2> <h4 data-astro-cid-3ef6ksr2>Language</h4> <div class="mobile-language-options" data-astro-cid-3ef6ksr2> <a href="/blog/frontend/vue/5" class="mobile-language-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/frontend/vue/5" class="mobile-language-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("mobile-menu-trigger"),l=document.getElementById("mobile-menu-overlay"),t=document.getElementById("mobile-menu-panel"),r=document.getElementById("mobile-menu-close"),s=document.getElementById("language-trigger"),o=document.getElementById("language-menu");if(a&&l&&t&&r){const i=()=>{a.classList.add("active"),l.classList.add("show"),t.classList.add("show"),document.body.style.overflow="hidden"},n=()=>{a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""};a.addEventListener("click",i),r.addEventListener("click",n),l.addEventListener("click",n),t.querySelectorAll(".mobile-nav-link, .mobile-language-item").forEach(e=>{e.addEventListener("click",n)}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("show")&&n()})}if(s&&o){const i=()=>{o.classList.toggle("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform=o.classList.contains("show")?"rotate(180deg)":"")},n=()=>{o.classList.remove("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform="")};s.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),i()}),document.addEventListener("click",e=>{const c=s.closest(".language-dropdown");c&&!c.contains(e.target)&&n()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&o.classList.contains("show")&&n()}),o.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",c=>{const m=e.getAttribute("href");m&&(window.location.href=m)})})}let d;window.addEventListener("resize",()=>{clearTimeout(d),d=setTimeout(()=>{if(window.innerWidth>=768&&t&&t.classList.contains("show")&&(a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""),window.innerWidth<768&&o&&o.classList.contains("show")){o.classList.remove("show");const i=s.querySelector(".dropdown-arrow");i&&(i.style.transform="")}},150)})});</script> <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>Vue-xlsx-table 将Excel转为JSON</h1> <div class="date" data-astro-cid-bvzihdzo> Mar 12, 2020 </div> </div> </div> <div class="blog-content-toc-wrapper" data-astro-cid-bvzihdzo> <div class="blog-content-main prose blog-content-centered" data-astro-cid-bvzihdzo>  <ul>
+<li><a href="https://www.npmjs.com/package/vue-xlsx-table" class="external-link" rel="noopener noreferrer" target="_blank">Vue-xlsx-table官网</a></li>
+</ul>
+<h2 id="安装"><a class="heading-link" aria-label="链接到此标题" href="#安装">安装</a></h2>
+<p><code>npm install vue-xlsx-table --save</code></p>
+<h2 id="引用"><a class="heading-link" aria-label="链接到此标题" href="#引用">引用</a></h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> vueXlsxTable </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'vue-xlsx-table'</span></span>
+<span class="line"><span style="color:#E1E4E8">Vue.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(vueXlsxTable, {rABS: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">})</span></span></code></pre>
+<h2 id="例子"><a class="heading-link" aria-label="链接到此标题" href="#例子">例子</a></h2>
+<p>测试文件
+<img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200312131853.png" alt=""></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">template</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#79B8FF">vue-xlsx-table</span><span style="color:#FDAEB7;font-style:italic"> @on-select-file="selectExcel"</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"margin-right: 50px;"</span><span style="color:#E1E4E8">>批量导入&#x3C;/</span><span style="color:#79B8FF">vue-xlsx-table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">template</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">export default {</span></span>
+<span class="line"><span style="color:#B392F0">  data</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    return {};</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  methods: {</span></span>
+<span class="line"><span style="color:#B392F0">    selectExcel</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">        // 点击上传后,打印 data 将会出现 header和 body 俩个对象</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        // header 即为表格数据的第一行 </span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data.header);</span></span>
+<span class="line"><span style="color:#6A737D">        // header:{ </span></span>
+<span class="line"><span style="color:#6A737D">        //     0: "title"</span></span>
+<span class="line"><span style="color:#6A737D">        //     1: "description"</span></span>
+<span class="line"><span style="color:#6A737D">        //     2: "source"}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        // body即为存储的数据</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(data.body);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h2 id="个人实例"><a class="heading-link" aria-label="链接到此标题" href="#个人实例">个人实例</a></h2>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200312135032.png" alt=""></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">template</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">vue-xlsx-table</span><span style="color:#FDAEB7;font-style:italic"> @on-select-file="selectExcel"</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"margin-right: 50px;"</span><span style="color:#E1E4E8">>批量导入&#x3C;/</span><span style="color:#79B8FF">vue-xlsx-table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">el-dialog</span><span style="color:#B392F0"> title</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"导入信息"</span><span style="color:#FDAEB7;font-style:italic"> :visible.sync="dataVisible"></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">      &#x3C;el-table</span><span style="color:#FDAEB7;font-style:italic"> :data="datalist"></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">        &#x3C;el-table-column</span><span style="color:#B392F0"> property</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"title"</span><span style="color:#B392F0"> label</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"标题"</span><span style="color:#B392F0"> width</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"150"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#79B8FF">el-table-column</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#79B8FF">el-table-column</span><span style="color:#B392F0"> property</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#B392F0"> label</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"描述"</span><span style="color:#B392F0"> width</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"200"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#79B8FF">el-table-column</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#79B8FF">el-table-column</span><span style="color:#B392F0"> property</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"source"</span><span style="color:#B392F0"> label</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"作者"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#79B8FF">el-table-column</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#79B8FF">el-table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> slot</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"footer"</span><span style="color:#B392F0"> class</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dialog-footer"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#79B8FF">el-button</span><span style="color:#FDAEB7;font-style:italic"> @click="dataVisible</span><span style="color:#FDAEB7;font-style:italic"> =</span><span style="color:#FDAEB7;font-style:italic"> false">取</span><span style="color:#FDAEB7;font-style:italic"> 消&#x3C;/el-button></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">        &#x3C;el-button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"primary"</span><span style="color:#FDAEB7;font-style:italic"> @click="uploadServer()">确</span><span style="color:#FDAEB7;font-style:italic"> 定&#x3C;/el-button></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">      &#x3C;/div></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">    &#x3C;/el-dialog></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">  &#x3C;/div></span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">&#x3C;/template></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">&#x3C;script></span></span>
+<span class="line"><span style="color:#B392F0">export</span><span style="color:#B392F0"> default</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  data</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    return {</span></span>
+<span class="line"><span style="color:#B392F0">      dataVisible</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">      datalist</span><span style="color:#E1E4E8">: []</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  methods: {</span></span>
+<span class="line"><span style="color:#B392F0">    selectExcel</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">excelData</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      this</span><span style="color:#E1E4E8">.dataVisible </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">      let</span><span style="color:#E1E4E8"> datas </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> excelData.body;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">      let</span><span style="color:#E1E4E8"> dataList </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [];</span></span>
+<span class="line"><span style="color:#E1E4E8">      datas.</span><span style="color:#B392F0">forEach</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">element</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.datalist.</span><span style="color:#B392F0">push</span><span style="color:#E1E4E8">(element);</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span><span style="color:#FDAEB7;font-style:italic">;</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">&#x3C;/script></span></span></code></pre>  <!-- 评论区域 --> <div id="waline" class="waline-container" data-astro-cid-6z674vj5></div> <script type="module" src="/_astro/WalineComment.astro_astro_type_script_index_0_lang.u7Plge16.js"></script>  </div> <nav class="toc-sidebar" data-astro-cid-bvzihdzo> <h4 data-astro-cid-bvzihdzo>目录</h4> <ul data-astro-cid-bvzihdzo> <li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#安装" data-astro-cid-bvzihdzo>安装</a> </li><li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#引用" data-astro-cid-bvzihdzo>引用</a> </li><li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#例子" data-astro-cid-bvzihdzo>例子</a> </li><li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#个人实例" data-astro-cid-bvzihdzo>个人实例</a> </li> </ul> </nav> </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2026 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  <script>
+if (typeof window !== 'undefined') {
+	window.addEventListener('DOMContentLoaded', () => {
+		const main = document.querySelector('.blog-content-main');
+		if (!main) return;
+
+		// 代码块复制按钮
+		main.querySelectorAll('pre code').forEach(block => {
+			const pre = block.parentElement;
+			if (!pre) return;
+			const btn = document.createElement('button');
+			btn.className = 'copy-btn';
+			btn.type = 'button';
+			btn.innerText = '复制';
+			btn.onclick = () => {
+				navigator.clipboard.writeText(block.innerText);
+				btn.innerText = '已复制!';
+				setTimeout(() => { btn.innerText = '复制'; }, 1200);
+			};
+			pre.style.position = 'relative';
+			btn.style.position = 'absolute';
+			btn.style.top = '8px';
+			btn.style.right = '12px';
+			pre.appendChild(btn);
+		});
+	});
+}
+</script> </body></html>

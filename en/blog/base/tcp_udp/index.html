@@ -1,1 +1,169 @@
-<!doctype html><title>Redirecting to: /blog/base/tcp_udp/</title><meta http-equiv="refresh" content="2;url=/blog/base/tcp_udp/"><meta name="robots" content="noindex"><link rel="canonical" href="https://logyxiao.cc/blog/base/tcp_udp/"><body>	<a href="/blog/base/tcp_udp/">Redirecting from <code>/en/blog/base/tcp_udp/</code> to <code>/blog/base/tcp_udp/</code></a></body>
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><!-- 防止样式闪烁的优化 --><style>
+	/* 防止FOUC的最小CSS */
+	html { visibility: hidden; opacity: 0; }
+	html.loaded { visibility: visible; opacity: 1; transition: opacity 0.3s ease; }
+	/* 基础字体和背景 */
+	body { 
+		font-family: 'Roboto', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+		background-color: #ffffff;
+		color: #171717;
+		line-height: 1.6;
+	}
+</style><!-- CSS预加载 --><link rel="preload" href="/_astro/global.css" as="style"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.18.2"><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/en/blog/base/tcp_udp/"><!-- Primary Meta Tags --><title>TCP和UDP</title><meta name="title" content="TCP和UDP"><meta name="description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/en/blog/base/tcp_udp/"><meta property="og:title" content="TCP和UDP"><meta property="og:description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><meta property="og:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/en/blog/base/tcp_udp/"><meta property="twitter:title" content="TCP和UDP"><meta property="twitter:description" content="传输控制协议（`TCP`）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由`IETF`的`RFC 793`定义。在简化的计算机网络`OSI`模型中的传输层。"><meta property="twitter:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- 防止FOUC的脚本 --><script>
+	// 页面加载完成后显示内容
+	document.addEventListener('DOMContentLoaded', () => {
+		document.documentElement.classList.add('loaded');
+	});
+	
+	// 如果DOMContentLoaded已经触发（例如缓存页面）
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			document.documentElement.classList.add('loaded');
+		});
+	} else {
+		document.documentElement.classList.add('loaded');
+	}
+</script><link rel="stylesheet" href="/_astro/WalineComment.Ca7MAHcU.css">
+<link rel="stylesheet" href="/_astro/_slug_.C7e_TW9c.css">
+<link rel="stylesheet" href="/_astro/_slug_.CMcvKPF-.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <!-- 桌面端导航 --> <div class="desktop-nav hidden md:flex" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/en/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/en/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Movies </a>  <a href="/en/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  <!-- 桌面端语言切换 --> <div class="language-dropdown" data-astro-cid-3ef6ksr2> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>Language</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-3ef6ksr2> <a href="/blog/base/tcp_udp" class="dropdown-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/base/tcp_udp" class="dropdown-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> <!-- 移动端汉堡菜单 --> <div class="mobile-nav md:hidden flex px-3 flex items-center" data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <button class="hamburger-menu" id="mobile-menu-trigger" aria-label="打开菜单" data-astro-cid-3ef6ksr2> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- 移动端菜单面板 - 移到 header 外部 --> <div class="mobile-menu-overlay" id="mobile-menu-overlay" data-astro-cid-3ef6ksr2></div> <div class="mobile-menu-panel" id="mobile-menu-panel" data-astro-cid-3ef6ksr2> <div class="mobile-menu-header " data-astro-cid-3ef6ksr2> <button class="close-button" id="mobile-menu-close" aria-label="关闭菜单" data-astro-cid-3ef6ksr2> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> <div class="mobile-menu-content" data-astro-cid-3ef6ksr2> <nav class="mobile-nav-links" data-astro-cid-3ef6ksr2> <a href="/en/" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" data-astro-cid-3ef6ksr2></path> </svg> Home </a> <a href="/en/blog" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" data-astro-cid-3ef6ksr2></path> </svg> Blog </a> <a href="/en/movies" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" data-astro-cid-3ef6ksr2></path> </svg> Movies </a> <a href="/en/about" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" data-astro-cid-3ef6ksr2></path> </svg> About </a> </nav> <!-- 移动端语言切换 --> <div class="mobile-language-section" data-astro-cid-3ef6ksr2> <h4 data-astro-cid-3ef6ksr2>Language</h4> <div class="mobile-language-options" data-astro-cid-3ef6ksr2> <a href="/blog/base/tcp_udp" class="mobile-language-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/base/tcp_udp" class="mobile-language-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("mobile-menu-trigger"),l=document.getElementById("mobile-menu-overlay"),t=document.getElementById("mobile-menu-panel"),r=document.getElementById("mobile-menu-close"),s=document.getElementById("language-trigger"),o=document.getElementById("language-menu");if(a&&l&&t&&r){const i=()=>{a.classList.add("active"),l.classList.add("show"),t.classList.add("show"),document.body.style.overflow="hidden"},n=()=>{a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""};a.addEventListener("click",i),r.addEventListener("click",n),l.addEventListener("click",n),t.querySelectorAll(".mobile-nav-link, .mobile-language-item").forEach(e=>{e.addEventListener("click",n)}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("show")&&n()})}if(s&&o){const i=()=>{o.classList.toggle("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform=o.classList.contains("show")?"rotate(180deg)":"")},n=()=>{o.classList.remove("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform="")};s.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),i()}),document.addEventListener("click",e=>{const c=s.closest(".language-dropdown");c&&!c.contains(e.target)&&n()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&o.classList.contains("show")&&n()}),o.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",c=>{const m=e.getAttribute("href");m&&(window.location.href=m)})})}let d;window.addEventListener("resize",()=>{clearTimeout(d),d=setTimeout(()=>{if(window.innerWidth>=768&&t&&t.classList.contains("show")&&(a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""),window.innerWidth<768&&o&&o.classList.contains("show")){o.classList.remove("show");const i=s.querySelector(".dropdown-arrow");i&&(i.style.transform="")}},150)})});</script> <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>TCP和UDP</h1> <div class="date" data-astro-cid-bvzihdzo> Feb 29, 2020 </div> </div> </div> <div class="blog-content-toc-wrapper" data-astro-cid-bvzihdzo> <div class="blog-content-main prose blog-content-centered" data-astro-cid-bvzihdzo>  <h1 id="tcp和udp"><a class="heading-link" aria-label="链接到此标题" href="#tcp和udp">TCP和UDP</a></h1>
+<h2 id="tcp"><a class="heading-link" aria-label="链接到此标题" href="#tcp">TCP</a></h2>
+<p>传输控制协议（<code>TCP</code>）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由<code>IETF</code>的<code>RFC 793</code>定义。在简化的计算机网络<code>OSI</code>模型中的传输层。</p>
+<h3 id="tcp三次握手过程"><a class="heading-link" aria-label="链接到此标题" href="#tcp三次握手过程">TCP三次握手过程</a></h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229225736.png" alt=""></p>
+<ol>
+<li>客户端通过向服务器端发送一个<code>SYN</code>来创建一个主动打开，作为三次握手的一部分。客户端把这段连接的序号设定为随机数X。</li>
+<li>服务器端应当为一个合法的<code>SYN</code>回送一个<code>SYN/ACK</code>。<code>ACK</code>的确认码应为X+1，<code>SYN/ACK</code>包本身又有一个随机产生的序号Y。</li>
+<li>最后，客户端再发送一个<code>ACK</code>。此时包的序号被设定为X+1，而<code>ACK</code>的确认码则为Y+1。当服务端收到这个<code>ACK</code>的时候，就完成了三次握手，并进入了连接创建状态。</li>
+</ol>
+<p>3次握手的特点</p>
+<p>没有应用层的数据 ,SYN这个标志位只有在TCP建立连接时才会被置1 ,握手完成后SYN标志位被置0。</p>
+<h3 id="tcp的四次握手"><a class="heading-link" aria-label="链接到此标题" href="#tcp的四次握手">TCP的四次握手</a></h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229230940.png" alt=""></p>
+<ol>
+<li>
+<p>当 客户端完成数据传输后,将控制位FIN置1，提出停止TCP连接的请求</p>
+</li>
+<li>
+<p>服务器收到FIN后对其作出响应，确认这一方向上的TCP连接将关闭,将ACK置1</p>
+</li>
+<li>
+<p>由服务器再提出反方向的关闭请求,将FIN置1</p>
+</li>
+<li>
+<p>客户端对服务器的请求进行确认，将ACK置1，双方向的关闭结束</p>
+</li>
+</ol>
+<h3 id="tcp的表头"><a class="heading-link" aria-label="链接到此标题" href="#tcp的表头">TCP的表头</a></h3>
+<p><img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229221716.png" alt=""></p>
+<ul>
+<li>序列号（seq，32位长）
+<ul>
+<li>如果含有同步化旗标（SYN），则此为最初的序列号,第一个数据比特的序列码为本序列号加一。</li>
+<li>如果没有同步化旗标（SYN），则此为第一个数据比特的序列码。</li>
+</ul>
+</li>
+<li>窗口（WIN，16位长）
+<ul>
+<li>表示从确认号开始，本报文的发送方可以接收的字节数，即接收窗口大小。用于流量控制</li>
+</ul>
+</li>
+<li>标识符
+<ul>
+<li>URG=1：该字段为一表示本数据报的数据部分包含紧急信息，是一个高优先级数据报文，此时紧急指针有效。紧急数据一定位于当前数据包数据部分的最前面，紧急指针标明了紧急数据的尾部。</li>
+<li>ACK=1：该字段为一表示确认号字段有效。此外，TCP 还规定在连接建立后传送的所有报文段都必须把 ACK 置为一。</li>
+<li>PSH=1：该字段为一表示接收端应该立即将数据 push 给应用层，而不是等到缓冲区满后再提交。</li>
+<li>RST=1：该字段为一表示当前 TCP 连接出现严重问题，可能需要重新建立 TCP 连接，也可以用于拒绝非法的报文段和拒绝连接请求。</li>
+<li>SYN=1：当SYN=1，ACK=0时，表示当前报文段是一个连接请求报文。当SYN=1，ACK=1时，表示当前报文段是一个同意建立连接的应答报文。</li>
+<li>FIN=1：该字段为一表示此报文段是一个释放连接的请求报文。</li>
+</ul>
+</li>
+</ul>
+<h2 id="udp"><a class="heading-link" aria-label="链接到此标题" href="#udp">UDP</a></h2>
+<p>用户数据报协议（<code>UDP</code>）是同一层内另一个重要的传输协议,是一个简单的面向数据报的通信协议,是一种无连接的协议。</p>
+<p><strong><code>UDP</code>有不提供数据包分组、组装和不能对数据包进行排序的缺点</strong>,也就是说，当报文发送之后，是无法得知其是否安全完整到达的。</p>
+<h3 id="特点"><a class="heading-link" aria-label="链接到此标题" href="#特点">特点</a></h3>
+<ol>
+<li>
+<p><strong><code>UDP</code>是无连接的</strong>，即发送数据之前不需要建立连接，因此减少了开销和发送数据之前的时延。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>是不可靠的</strong>,因为<code>UDP</code>使用尽最大努力交付，即不保证可靠交付，因此主机不需要维持复杂的连接状态表。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>是面向报文的</strong>。发送方的<code>UDP</code>对应用程序交下来的报文，在添加首部后就向下交付IP层。<code>UDP</code>对应用层交下来的报文，既不合并，也不拆分，而是保留这些报文的边界。因此，应用程序必须选择合适大小的报文。</p>
+</li>
+<li>
+<p><strong><code>UDP</code>没有拥塞控制</strong>,因此网络出现的拥塞不会使源主机的发送速率降低。很多的实时应用（如IP电话、实时视频会议等）要去源主机以恒定的速率发送数据，并且允许在网络发生拥塞时丢失一些数据，但却不允许数据有太多的时延。<code>UDP</code>正好符合这种要求。</p>
+</li>
+<li>
+<p><code>UDP</code>支持一对一、一对多、多对一和多对多的交互通信。</p>
+</li>
+<li>
+<p><code>UDP</code>的首部开销小，只有8个字节，比TCP的20个字节的首部要短。
+<img src="https://raw.githubusercontent.com/Moking1997/NotePhoto/master/20200229221347.png" alt=""></p>
+</li>
+</ol>
+<ul>
+<li>
+<p>源端口:在需要对方回信时选用。不需要时可用全0。</p>
+</li>
+<li>
+<p>目的端口:这在终点交付报文时必须要使用到。</p>
+</li>
+<li>
+<p>长度:UDP用户数据报的长度，其最小值是8（仅有首部）</p>
+</li>
+<li>
+<p>检验和:检测UDP用户数据报在传输中是否有错。有错就丢弃。</p>
+</li>
+</ul>
+<h3 id="tcp-与-udp-的区别"><a class="heading-link" aria-label="链接到此标题" href="#tcp-与-udp-的区别"><code>TCP</code> 与 <code>UDP</code> 的区别</a></h3>
+<ol>
+<li>
+<p><code>TCP</code>基于连接,<code>UDP</code>是无连接</p>
+</li>
+<li>
+<p>对系统资源的要求（<code>TCP</code>较多，<code>UDP</code>少）</p>
+</li>
+<li>
+<p><code>UDP</code>程序结构较简单,速度快</p>
+</li>
+<li>
+<p>流模式与数据报模式</p>
+</li>
+<li>
+<p><code>TCP</code>保证数据正确性，<code>UDP</code>可能丢包</p>
+</li>
+<li>
+<p><code>TCP</code>保证数据顺序，<code>UDP</code>不保证。</p>
+</li>
+</ol>  <!-- 评论区域 --> <div id="waline" class="waline-container" data-astro-cid-6z674vj5></div> <script type="module" src="/_astro/WalineComment.astro_astro_type_script_index_0_lang.u7Plge16.js"></script>  </div> <nav class="toc-sidebar" data-astro-cid-bvzihdzo> <h4 data-astro-cid-bvzihdzo>目录</h4> <ul data-astro-cid-bvzihdzo> <li class="toc-item toc-h1" data-astro-cid-bvzihdzo> <a href="#tcp和udp" data-astro-cid-bvzihdzo>TCP和UDP</a> </li><li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#tcp" data-astro-cid-bvzihdzo>TCP</a> </li><li class="toc-item toc-h3" data-astro-cid-bvzihdzo> <a href="#tcp三次握手过程" data-astro-cid-bvzihdzo>TCP三次握手过程</a> </li><li class="toc-item toc-h3" data-astro-cid-bvzihdzo> <a href="#tcp的四次握手" data-astro-cid-bvzihdzo>TCP的四次握手</a> </li><li class="toc-item toc-h3" data-astro-cid-bvzihdzo> <a href="#tcp的表头" data-astro-cid-bvzihdzo>TCP的表头</a> </li><li class="toc-item toc-h2" data-astro-cid-bvzihdzo> <a href="#udp" data-astro-cid-bvzihdzo>UDP</a> </li><li class="toc-item toc-h3" data-astro-cid-bvzihdzo> <a href="#特点" data-astro-cid-bvzihdzo>特点</a> </li><li class="toc-item toc-h3" data-astro-cid-bvzihdzo> <a href="#tcp-与-udp-的区别" data-astro-cid-bvzihdzo>TCP 与 UDP 的区别</a> </li> </ul> </nav> </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2026 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  <script>
+if (typeof window !== 'undefined') {
+	window.addEventListener('DOMContentLoaded', () => {
+		const main = document.querySelector('.blog-content-main');
+		if (!main) return;
+
+		// 代码块复制按钮
+		main.querySelectorAll('pre code').forEach(block => {
+			const pre = block.parentElement;
+			if (!pre) return;
+			const btn = document.createElement('button');
+			btn.className = 'copy-btn';
+			btn.type = 'button';
+			btn.innerText = '复制';
+			btn.onclick = () => {
+				navigator.clipboard.writeText(block.innerText);
+				btn.innerText = '已复制!';
+				setTimeout(() => { btn.innerText = '复制'; }, 1200);
+			};
+			pre.style.position = 'relative';
+			btn.style.position = 'absolute';
+			btn.style.top = '8px';
+			btn.style.right = '12px';
+			pre.appendChild(btn);
+		});
+	});
+}
+</script> </body></html>

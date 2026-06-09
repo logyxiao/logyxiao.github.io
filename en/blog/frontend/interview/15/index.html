@@ -1,1 +1,142 @@
-<!doctype html><title>Redirecting to: /blog/frontend/interview/15/</title><meta http-equiv="refresh" content="2;url=/blog/frontend/interview/15/"><meta name="robots" content="noindex"><link rel="canonical" href="https://logyxiao.cc/blog/frontend/interview/15/"><body>	<a href="/blog/frontend/interview/15/">Redirecting from <code>/en/blog/frontend/interview/15/</code> to <code>/blog/frontend/interview/15/</code></a></body>
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><!-- 防止样式闪烁的优化 --><style>
+	/* 防止FOUC的最小CSS */
+	html { visibility: hidden; opacity: 0; }
+	html.loaded { visibility: visible; opacity: 1; transition: opacity 0.3s ease; }
+	/* 基础字体和背景 */
+	body { 
+		font-family: 'Roboto', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+		background-color: #ffffff;
+		color: #171717;
+		line-height: 1.6;
+	}
+</style><!-- CSS预加载 --><link rel="preload" href="/_astro/global.css" as="style"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Logyxiao's Blog" href="https://logyxiao.cc/rss.xml"><meta name="generator" content="Astro v5.18.2"><!-- Canonical URL --><link rel="canonical" href="https://logyxiao.cc/en/blog/frontend/interview/15/"><!-- Primary Meta Tags --><title>浏览器的重绘与回流</title><meta name="title" content="浏览器的重绘与回流"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://logyxiao.cc/en/blog/frontend/interview/15/"><meta property="og:title" content="浏览器的重绘与回流"><meta property="og:description" content><meta property="og:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://logyxiao.cc/en/blog/frontend/interview/15/"><meta property="twitter:title" content="浏览器的重绘与回流"><meta property="twitter:description" content><meta property="twitter:image" content="https://logyxiao.cc/_astro/loading.MEf-iKv8.gif"><!-- 防止FOUC的脚本 --><script>
+	// 页面加载完成后显示内容
+	document.addEventListener('DOMContentLoaded', () => {
+		document.documentElement.classList.add('loaded');
+	});
+	
+	// 如果DOMContentLoaded已经触发（例如缓存页面）
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			document.documentElement.classList.add('loaded');
+		});
+	} else {
+		document.documentElement.classList.add('loaded');
+	}
+</script><link rel="stylesheet" href="/_astro/WalineComment.Ca7MAHcU.css">
+<link rel="stylesheet" href="/_astro/_slug_.C7e_TW9c.css">
+<link rel="stylesheet" href="/_astro/_slug_.CMcvKPF-.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <!-- 桌面端导航 --> <div class="desktop-nav hidden md:flex" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/en/blog" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/en/movies" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Movies </a>  <a href="/en/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  <!-- 桌面端语言切换 --> <div class="language-dropdown" data-astro-cid-3ef6ksr2> <button class="dropdown-trigger" id="language-trigger" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>Language</span> <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-astro-cid-3ef6ksr2></path> </svg> </button> <div class="dropdown-menu" id="language-menu" data-astro-cid-3ef6ksr2> <a href="/blog/frontend/interview/15" class="dropdown-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/frontend/interview/15" class="dropdown-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> <!-- 移动端汉堡菜单 --> <div class="mobile-nav md:hidden flex px-3 flex items-center" data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/en" data-astro-cid-3ef6ksr2>Logyxiao&#39;s Blog</a></h2> <button class="hamburger-menu" id="mobile-menu-trigger" aria-label="打开菜单" data-astro-cid-3ef6ksr2> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> <span class="hamburger-line" data-astro-cid-3ef6ksr2></span> </button> </div> </nav> </header> <!-- 移动端菜单面板 - 移到 header 外部 --> <div class="mobile-menu-overlay" id="mobile-menu-overlay" data-astro-cid-3ef6ksr2></div> <div class="mobile-menu-panel" id="mobile-menu-panel" data-astro-cid-3ef6ksr2> <div class="mobile-menu-header " data-astro-cid-3ef6ksr2> <button class="close-button" id="mobile-menu-close" aria-label="关闭菜单" data-astro-cid-3ef6ksr2> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" data-astro-cid-3ef6ksr2></path> </svg> </button> </div> <div class="mobile-menu-content" data-astro-cid-3ef6ksr2> <nav class="mobile-nav-links" data-astro-cid-3ef6ksr2> <a href="/en/" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" data-astro-cid-3ef6ksr2></path> </svg> Home </a> <a href="/en/blog" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" data-astro-cid-3ef6ksr2></path> </svg> Blog </a> <a href="/en/movies" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" data-astro-cid-3ef6ksr2></path> </svg> Movies </a> <a href="/en/about" class="mobile-nav-link" data-astro-cid-3ef6ksr2> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" data-astro-cid-3ef6ksr2></path> </svg> About </a> </nav> <!-- 移动端语言切换 --> <div class="mobile-language-section" data-astro-cid-3ef6ksr2> <h4 data-astro-cid-3ef6ksr2>Language</h4> <div class="mobile-language-options" data-astro-cid-3ef6ksr2> <a href="/blog/frontend/interview/15" class="mobile-language-item " data-lang="zh-cn" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>简体中文</span>  </a><a href="/en/blog/frontend/interview/15" class="mobile-language-item active" data-lang="en" data-astro-cid-3ef6ksr2> <span class="lang-name" data-astro-cid-3ef6ksr2>English</span> <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16" data-astro-cid-3ef6ksr2> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" data-astro-cid-3ef6ksr2></path> </svg> </a> </div> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("mobile-menu-trigger"),l=document.getElementById("mobile-menu-overlay"),t=document.getElementById("mobile-menu-panel"),r=document.getElementById("mobile-menu-close"),s=document.getElementById("language-trigger"),o=document.getElementById("language-menu");if(a&&l&&t&&r){const i=()=>{a.classList.add("active"),l.classList.add("show"),t.classList.add("show"),document.body.style.overflow="hidden"},n=()=>{a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""};a.addEventListener("click",i),r.addEventListener("click",n),l.addEventListener("click",n),t.querySelectorAll(".mobile-nav-link, .mobile-language-item").forEach(e=>{e.addEventListener("click",n)}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("show")&&n()})}if(s&&o){const i=()=>{o.classList.toggle("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform=o.classList.contains("show")?"rotate(180deg)":"")},n=()=>{o.classList.remove("show");const e=s.querySelector(".dropdown-arrow");e&&(e.style.transform="")};s.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation(),i()}),document.addEventListener("click",e=>{const c=s.closest(".language-dropdown");c&&!c.contains(e.target)&&n()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&o.classList.contains("show")&&n()}),o.querySelectorAll(".dropdown-item").forEach(e=>{e.addEventListener("click",c=>{const m=e.getAttribute("href");m&&(window.location.href=m)})})}let d;window.addEventListener("resize",()=>{clearTimeout(d),d=setTimeout(()=>{if(window.innerWidth>=768&&t&&t.classList.contains("show")&&(a.classList.remove("active"),l.classList.remove("show"),t.classList.remove("show"),document.body.style.overflow=""),window.innerWidth<768&&o&&o.classList.contains("show")){o.classList.remove("show");const i=s.querySelector(".dropdown-arrow");i&&(i.style.transform="")}},150)})});</script> <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo>  </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>浏览器的重绘与回流</h1> <div class="date" data-astro-cid-bvzihdzo> Mar 20, 2020 </div> </div> </div> <div class="blog-content-toc-wrapper" data-astro-cid-bvzihdzo> <div class="blog-content-main prose blog-content-centered" data-astro-cid-bvzihdzo>  <ol>
+<li>
+<p>浏览器渲染机制
+浏览器采用流式布局模型（Flow Based Layout）
+浏览器会把HTML解析成DOM，把CSS解析成CSSOM，DOM和CSSOM合并就产生了渲染树（Render Tree）。
+有了RenderTree，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制到页面上。
+由于浏览器使用流式布局，对Render Tree的计算通常只需要遍历一次就可以完成，但table及其内部元素除外，他们可能需要多次计算，通常要花3倍于同等元素的时间，这也是为什么要避免使用table布局的原因之一。</p>
+</li>
+<li>
+<p>重绘
+由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，称为重绘，例如outline, visibility, color、background-color等，重绘的代价是高昂的，因为浏览器必须验证DOM树上其他节点元素的可见性。</p>
+</li>
+<li>
+<p>回流
+回流是布局或者几何属性需要改变就称为回流。回流是影响浏览器性能的关键因素，因为其变化涉及到部分页面（或是整个页面）的布局更新。一个元素的回流可能会导致了其所有子元素以及DOM中紧随其后的节点、祖先节点元素的随后的回流。</p>
+</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>我的组件&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>&#x3C;</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>错误：&#x3C;/</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>错误的描述…&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h5</span><span style="color:#E1E4E8">>错误纠正&#x3C;/</span><span style="color:#85E89D">h5</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">ol</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>第一步&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>第二步&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">ol</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>在上面的HTML片段中，对该段落<code>(&#x3C;p>标签)</code>回流将会引发强烈的回流，因为它是一个子节点。这也导致了祖先的回流（div.error和body – 视浏览器而定）。此外，<code>&#x3C;h5></code>和<code>&#x3C;ol></code>也会有简单的回流，因为其在DOM中在回流元素之后。大部分的回流将导致页面的重新渲染。</p>
+<p>回流必定会发生重绘，重绘不一定会引发回流。</p>
+<ol start="4">
+<li>浏览器优化
+现代浏览器大多都是通过队列机制来批量更新布局，浏览器会把修改操作放在队列中，至少一个浏览器刷新（即16.6ms）才会清空队列，但当你获取布局信息的时候，队列中可能有会影响这些属性或方法返回值的操作，即使没有，浏览器也会强制清空队列，触发回流与重绘来确保返回正确的值。</li>
+</ol>
+<p>主要包括以下属性或方法：</p>
+<ul>
+<li>offsetTop、offsetLeft、offsetWidth、offsetHeight</li>
+<li>scrollTop、scrollLeft、scrollWidth、scrollHeight</li>
+<li>clientTop、clientLeft、clientWidth、clientHeight</li>
+<li>width、height</li>
+<li>getComputedStyle()</li>
+<li>getBoundingClientRect()
+所以，我们应该避免频繁的使用上述的属性，他们都会强制渲染刷新队列。</li>
+</ul>
+<ol start="5">
+<li>减少重绘与回流
+CSS</li>
+</ol>
+<ul>
+<li>
+<p>使用 transform 替代 top</p>
+</li>
+<li>
+<p>使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局</p>
+</li>
+<li>
+<p>避免使用table布局，可能很小的一个小改动会造成整个 table 的重新布局。</p>
+</li>
+<li>
+<p>尽可能在DOM树的最末端改变class，回流是不可避免的，但可以减少其影响。尽可能在DOM树的最末端改变class，可以限制了回流的范围，使其影响尽可能少的节点。</p>
+</li>
+<li>
+<p>避免设置多层内联样式，CSS 选择符从右往左匹配查找，避免节点层级过多。</p>
+</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">> &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">> &#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#85E89D">  span</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">red</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#85E89D">  div</span><span style="color:#F97583"> ></span><span style="color:#85E89D"> a</span><span style="color:#F97583"> ></span><span style="color:#85E89D"> span</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">red</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>对于第一种设置样式的方式来说，浏览器只需要找到页面中所有的 span 标签然后设置颜色，但是对于第二种设置样式的方式来说，浏览器首先需要找到所有的 span 标签，然后找到 span 标签上的 a 标签，最后再去找到 div 标签，然后给符合这种条件的 span 标签设置颜色，这样的递归过程就很复杂。所以我们应该尽可能的避免写过于具体的 CSS 选择器，然后对于 HTML 来说也尽量少的添加无意义标签，保证层级扁平。</p>
+<p>将动画效果应用到position属性为absolute或fixed的元素上，避免影响其他元素的布局，这样只是一个重绘，而不是回流，同时，控制动画速度可以选择 requestAnimationFrame，详见探讨 requestAnimationFrame。</p>
+<p>避免使用CSS表达式，可能会引发回流。</p>
+<p>将频繁重绘或者回流的节点设置为图层，图层能够阻止该节点的渲染行为影响别的节点，例如will-change、video、iframe等标签，浏览器会自动将该节点变为图层。</p>
+<p>CSS3 硬件加速（GPU加速），使用css3硬件加速，可以让transform、opacity、filters这些动画不会引起回流重绘 。但是对于动画的其它属性，比如background-color这些，还是会引起回流重绘的，不过它还是可以提升这些动画的性能。</p>
+<p>JavaScript</p>
+<p>避免频繁操作样式，最好一次性重写style属性，或者将样式列表定义为class并一次性更改class属性。
+避免频繁操作DOM，创建一个documentFragment，在它上面应用所有DOM操作，最后再把它添加到文档中。
+避免频繁读取会引发回流/重绘的属性，如果确实需要多次使用，就用一个变量缓存起来。
+对具有复杂动画的元素使用绝对定位，使它脱离文档流，否则会引起父元素及后续元素频繁回流。</p>  <!-- 评论区域 --> <div id="waline" class="waline-container" data-astro-cid-6z674vj5></div> <script type="module" src="/_astro/WalineComment.astro_astro_type_script_index_0_lang.u7Plge16.js"></script>  </div>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+logyxiao's Blog-&copy; 2026 - by Astro.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  <script>
+if (typeof window !== 'undefined') {
+	window.addEventListener('DOMContentLoaded', () => {
+		const main = document.querySelector('.blog-content-main');
+		if (!main) return;
+
+		// 代码块复制按钮
+		main.querySelectorAll('pre code').forEach(block => {
+			const pre = block.parentElement;
+			if (!pre) return;
+			const btn = document.createElement('button');
+			btn.className = 'copy-btn';
+			btn.type = 'button';
+			btn.innerText = '复制';
+			btn.onclick = () => {
+				navigator.clipboard.writeText(block.innerText);
+				btn.innerText = '已复制!';
+				setTimeout(() => { btn.innerText = '复制'; }, 1200);
+			};
+			pre.style.position = 'relative';
+			btn.style.position = 'absolute';
+			btn.style.top = '8px';
+			btn.style.right = '12px';
+			pre.appendChild(btn);
+		});
+	});
+}
+</script> </body></html>
